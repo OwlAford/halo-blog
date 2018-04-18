@@ -1,0 +1,125 @@
+@keyframes text-flashing {
+  0%, 100% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0
+  }
+}
+
+.profile-terminal {
+  padding: 0 30px 40px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  .terminal {
+    width: 480px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #212121;
+    box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.72),
+    0 28px 48px -6px rgba(0, 0, 0, .2);
+    
+    .header {
+      width: 100%;
+      height: 26px;
+      box-sizing: border-box;
+      padding: 0 6px;
+      line-height: 24px;
+  
+      i {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: #FB5D57;
+        border: 1px solid #EA524C;
+        vertical-align: middle;
+        margin: 0 4px;
+  
+        &:nth-child(2) {
+          background-color: #FDBC3F;
+          border-color: #E0A13A;
+        }
+        
+        &:nth-child(3) {
+          background-color: #3BCC51;
+          border-color: #3BAD41;
+        }
+      }
+    }
+    
+    .content {
+      height: 360px;
+      color: #53AE58;
+      font-family: "Monaco", "Consolas", "Source Code Pro";
+      position: relative;
+  
+      i.cursor {
+        font-style: normal;
+        padding: 0 2px;
+  
+        &.flash {
+          animation: text-flashing .6s infinite;
+        }
+  
+        &:after {
+          content: "_"
+        }
+      }
+  
+      .inner {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        line-height: 1.8;
+        overflow: hidden;
+        font-size: 12px;
+  
+        p {
+          margin: 0;
+  
+          &.gap {
+            margin-top: 16px;
+          }
+  
+          &.title {
+            color: #F462E5;
+            margin-bottom: 16px;
+          }
+        }
+      }
+  
+      .inputArea {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+.profile-effect {
+  .soccer {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    top: -80px;
+    background: url(../images/soccer.png) no-repeat;
+    background-size: 100% auto;
+    transition: left 3s ease-out;
+    z-index: 99;
+  }
+}

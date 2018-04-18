@@ -1,0 +1,417 @@
+$ratio: 1.25;
+$hair: 170px;
+
+@keyframes girlSing {
+  0%, 40% {
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 30%, 60% {
+    transform: scale3d(1, .1, 1);
+  }
+  70%, 20% {
+    transform: scale3d(.8, .8, .8);
+  }
+  100%, 50% {
+    transform: scale3d(.5, .5, .5);
+    border-radius: 15px;
+  }
+}
+
+@keyframes musicPlaying {
+  0% {
+    transform: translate3d(50%, -50%, 0) rotate(45deg) scale(0.36);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate3d(100%, -100%, 0) rotate(-45deg) scale(0.54);
+    opacity: .8;
+  }
+
+  40% {
+    transform: translate3d(150%, -150%, 0) rotate(45deg) scale(0.72);
+    opacity: .6;
+  }
+
+  60% {
+    transform: translate3d(200%, -200%, 0) rotate(-45deg) scale(1.08);
+    opacity: .4;
+  }
+
+  80% {
+    transform: translate3d(250%, -250%, 0) rotate(45deg) scale(1.44);
+    opacity: .2;
+  }
+
+  100% {
+    transform: translate3d(300%, -300%, 0) rotate(-45deg) scale(1.8);
+    opacity:.0;
+  }
+
+}
+
+.girl-wrap {
+  position: fixed;
+  width: 80px/$ratio;
+  height: 160px/$ratio;
+  left: 50%;
+  top: 50%;
+  margin: -80px/$ratio 0 0 -40px/$ratio;
+  z-index: 999;
+  cursor: move;
+  user-select: none;
+  transition: transform .3s;
+
+  div {
+    position: absolute;
+  }
+
+  .me {
+    left: 0;
+    position: absolute;
+    right: 0;
+    margin: auto;
+    width: 80px/$ratio;
+    height: 160px/$ratio;
+
+    &.sing {
+      &:after, &:before {
+        content: "";
+        display: block;
+        height: 40px/$ratio;
+        width: 40px/$ratio;
+        position: absolute;
+        right: 0;
+        top: 40px/$ratio;
+        opacity: 0;
+        background: url(../images/music.svg) center center no-repeat;
+        background-size: 100% auto;
+        animation: musicPlaying 3s infinite linear;
+        z-index: 9;
+      }
+
+      &:before {
+        animation-delay: 1.5s;
+      }
+
+      .head .mouse {
+        width: 30px;
+        height: 15px;
+        background-color: #af2e2e;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        position: absolute;
+        left: 12px;
+        top: 48px;
+        animation: girlSing 2s infinite alternate;
+      }
+    }
+
+    .head {
+      transition: all 0.5s ease 0.03s;
+      width: 70px/$ratio;
+      height: 90px/$ratio;
+      background: #ffd3c1;
+      border-radius: 100px/$ratio;
+      top: 10px/$ratio;
+      left: 5px/$ratio;
+
+      .bangs {
+        transition: all 0.5s ease 0.03s;
+        height: 50px/$ratio;
+        width: 94%;
+        background: #111427;
+        content: "";
+        position: absolute;
+        border-radius: 100px/$ratio 100px/$ratio 10px/$ratio 10px/$ratio;
+        top: -12px/$ratio;
+        left: 3px/$ratio;
+      }
+    }
+
+    .look-left {
+      &.head {
+        width: 70px/$ratio;
+        left: -10px/$ratio;
+  
+        .bangs {
+          width: 106%;
+          left: -7px/$ratio;
+        }
+      }
+    }
+
+    .look-right {
+      &.head {
+        width: 70px/$ratio;
+        left: 15px/$ratio;
+
+        .bangs {
+          width: 106%;
+          left: 5px/$ratio;
+        }
+      }
+    }
+
+    .look-down {
+      &.head {
+        height: 90px/$ratio;
+        top: 20px/$ratio;
+        width: 70px/$ratio;
+        left: 5px/$ratio;
+        transform-origin: bottom center 50%;
+
+        .bangs {
+          height: 80px/$ratio;
+          top: -32px/$ratio;
+        }
+      }
+    }
+
+    .look-up {
+      &.head {
+        height: 90px/$ratio;
+        top: 0px/$ratio;
+        width: 70px/$ratio;
+        left: 5px/$ratio;
+        transform-origin: bottom center 50%;
+
+        .bangs {
+          height: 40px/$ratio;
+          top: -12px/$ratio;
+        }
+      }
+    }
+
+    .look-down-right {
+      &.head {
+        top: 20px/$ratio;
+        left: 25px/$ratio;
+        width: 70px/$ratio;
+        transform: rotate(10deg);
+        transform-origin: bottom left 50%;
+
+        .bangs {
+          height: 60px/$ratio;
+          width: 106%;
+        }
+      }
+    }
+
+    .look-up-right {
+      &.head {
+        height: 90px/$ratio;
+        top: 0px/$ratio;
+        width: 70px/$ratio;
+        left: 15px/$ratio;
+        transform-origin: bottom center 50%;
+        transform: rotate(-15deg);
+
+        .bangs {
+          width: 105%;
+          height: 40px/$ratio;
+          top: -12px/$ratio;
+          left: 5px/$ratio;
+        }
+      }
+    }
+
+    .look-down-left {
+      &.head {
+        top: 20px/$ratio;
+        left: -15px/$ratio;
+        width: 70px/$ratio;
+        transform: rotate(-10deg);
+        transform-origin: bottom right 50%;
+
+        .bangs {
+          height: 60px/$ratio;
+          width: 106%;
+          left: -10px/$ratio;
+        }
+      }
+    }
+
+    .look-up-left {
+      &.head {
+        height: 90px/$ratio;
+        top: 0px/$ratio;
+        width: 70px/$ratio;
+        left: -10px/$ratio;
+        transform-origin: bottom center 50%;
+        transform: rotate(15deg);
+
+        .bangs {
+          width: 105%;
+          height: 40px/$ratio;
+          top: -12px/$ratio;
+          left: -10px/$ratio;
+        }
+      }
+    }
+
+    .neck {
+      height: 60px/$ratio;
+      width: 20px/$ratio;
+      position: absolute;
+      border-radius: 0px/$ratio 0px/$ratio 100px/$ratio 100px/$ratio;
+      background: #ffd3c1;
+      top: 60px/$ratio;
+      left: 30px/$ratio;
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 60px/$ratio;
+        height: 60px/$ratio;
+        border-radius: 100%;
+        top: -12px/$ratio;
+        background: #ebbfad;
+        left: -18px/$ratio;
+        transition: all 0.5s ease 0.03s;
+      }
+
+      &.look-left:before {
+        left: -38px/$ratio;
+      }
+
+      &.look-right:before {
+        left: -5px/$ratio;
+      }
+
+      &.look-down:before {
+        top: -5px/$ratio;
+      }
+
+      &.look-up:before {
+        top: -22px/$ratio;
+      }
+
+      &.look-down-right:before {
+        left: -2px/$ratio;
+        top: -5px/$ratio;
+      }
+
+      &.look-up-right:before {
+        left: -10px/$ratio;
+        top: -20px/$ratio;
+      }
+
+      &.look-down-left:before {
+        left: -38px/$ratio;
+        top: -5px/$ratio;
+      }
+
+      &.look-up-left:before {
+        left: -38px/$ratio;
+        top: -20px/$ratio;
+      }
+    }
+
+    .hair {
+      transition: all 0.5s ease 0.03s;
+      position: absolute;
+      height: $hair/$ratio;
+      width: 105px/$ratio;
+      border-top-left-radius: 45px/$ratio;
+      border-top-right-radius: 45px/$ratio;
+      border-bottom-left-radius: 36px/$ratio;
+      border-bottom-right-radius: 36px/$ratio;
+      background: #111427;
+      left: -12px/$ratio;
+      top: -12px/$ratio;
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 80px/$ratio;
+        height: ($hair - 10px)/$ratio;
+        background: #070a1d;
+        border-radius: 25px/$ratio;
+        top: 60px/$ratio;
+        left: 12px/$ratio;
+      }
+
+      &.look-left {
+        left: -5px/$ratio;
+        width: 100px/$ratio;
+      }
+
+      &.look-right {
+        left: -17px/$ratio;
+        width: 100px/$ratio;
+      }
+
+      &.look-down {
+        top: -12px/$ratio;
+        height: ($hair - 5px)/$ratio;
+      }
+
+      &.look-up {
+        top: -8px/$ratio;
+        height: ($hair + 10px)/$ratio;
+      }
+
+      &.look-down-right {
+        transform: rotate(10deg);
+      }
+
+      &.look-up-right {
+        left: -25px/$ratio;
+        top: -8px/$ratio;
+        height: ($hair + 10px)/$ratio;
+      }
+
+      &.look-down-left {
+        transform: rotate(-10deg);
+      }
+
+      &.look-up-left {
+        left: -8px/$ratio;
+        top: -8px/$ratio;
+        height: ($hair + 10px)/$ratio;
+      }
+    }
+
+    .clothes {
+      background: #d09233;
+      width: 80px/$ratio;
+      height: 40px/$ratio;
+      border-radius: 100px/$ratio 100px/$ratio 10px/$ratio 10px/$ratio;
+      top: 105px/$ratio;
+      overflow: hidden;
+
+      .jumper {
+        width: 60px/$ratio;
+        height: 100%;
+        top: 60%;
+        background: #607789;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        &:before {
+          background: #607789;
+          width: 10px/$ratio;
+          height: 50px/$ratio;
+          content: "";
+          position: absolute;
+          top: -40px/$ratio;
+          left: 0px/$ratio;
+        }
+
+        &:after {
+          background: #607789;
+          width: 10px/$ratio;
+          height: 50px/$ratio;
+          content: "";
+          position: absolute;
+          top: -40px/$ratio;
+          left: 50px/$ratio;
+        }
+      }
+    }
+  }
+}

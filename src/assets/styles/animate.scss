@@ -1,0 +1,110 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn .3s both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut .3s both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp .3s both;
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: none
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  animation: fadeOutDown .3s both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown .3s both;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.fadeInRight {
+  animation: fadeInRight .3s both;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.fadeInLeft {
+  animation: fadeInLeft .3s both;
+}
+
+@keyframes upDownMove {
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.upDownMove {
+  animation: upDownMove .3s both;
+}

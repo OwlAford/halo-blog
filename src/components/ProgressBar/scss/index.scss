@@ -1,0 +1,205 @@
+
+.progress-chart {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  backface-visibility: visible;
+
+  &.grid {
+    flex: 1;
+    flex-direction: row;
+
+    .exercise {
+      flex: 0 0 100%;
+      display: flex;
+
+      .bar {
+        & + .bar {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .bar {
+    position: relative;
+    height: 140px;
+    transition: all 0.3s ease-in-out;
+    transform: rotateX(60deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: transform .3s;
+
+    .face {
+      position: relative;
+      width: 100%;
+      height: 48px;
+      background-color: rgba(254, 254, 254, 0.3);
+
+      &.side-a, &.side-b {
+        width: 48px;
+      }
+    }
+
+    .side-a {
+      transform: rotateX(90deg) rotateY(-90deg) translate3d(48px, 24px, 24px);
+    }
+
+    .side-b {
+      transform: rotateX(90deg) rotateY(-90deg) translate3d(96px, 24px, -24px);
+      position: absolute;
+      right: 0;
+    }
+
+    .side-0 {
+      transform: rotateX(90deg) rotateY(0) translate3d(0, 24px, -24px);
+    }
+    .side-1 {
+      transform: rotateX(90deg) rotateY(0) translate3d(0, 24px, 72px);
+    }
+    .top {
+      transform: rotateX(0deg) rotateY(0) translate3d(0, 96px, 48px) translateX(0);
+    }
+    .floor {
+      box-shadow: 
+        0 0.24px 14.4px rgba(0, 0, 0, 0.3),
+        14.4px -12px 72px rgba(0, 0, 0, 0.3),
+        24px -24px 192px #fefefe;
+    }
+
+    &.yellow {
+      .side-a, .growing-bar {
+        background-color: rgba(241, 196, 15, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px rgba(241, 196, 15, 0.8);
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px rgba(241, 196, 15, 0.8);
+      }
+    }
+
+    &.navy {
+      .side-a, .growing-bar {
+        background-color: rgba(10, 64, 105, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px rgba(10, 64, 105, 0.8);
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px rgba(10, 64, 105, 0.8);
+      }
+    }
+
+    &.red {
+      .side-a, .growing-bar {
+        background-color: rgba(236, 0, 140, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px rgba(236, 0, 140, 0.8);
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px rgba(236, 0, 140, 0.8);
+      }
+    }
+
+    &.cyan {
+      .side-a, .growing-bar {
+        background-color: rgba(87, 202, 244, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px #57caf4;
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px #57caf4;
+      }
+    }
+
+    &.lime {
+      .side-a, .growing-bar {
+        background-color: rgba(118, 201, 0, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px #76c900;
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px #76c900;
+      }
+    }
+
+    &.white {
+      .side-a, .growing-bar {
+        background-color: rgba(254, 254, 254, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px #fefefe;
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px #fefefe;
+      }
+    }
+
+    &.gray {
+      .side-a, .growing-bar {
+        background-color: rgba(68, 68, 68, 0.6);
+      }
+
+      .side-0 .growing-bar {
+        box-shadow: -12px -36px 96px #444;
+      }
+
+      .floor .growing-bar {
+        box-shadow: 0 0 48px #444;
+      }
+    }
+
+    &.yellow-face .face {
+      background-color: rgba(241, 196, 15, 0.2);
+    }
+
+    &.lime-face .face {
+      background-color: rgba(118, 201, 0, 0.2);
+    }
+
+    &.red-face .face {
+      background-color: rgba(236, 0, 140, 0.2);
+    }
+
+    &.navy-face .face {
+      background-color: rgba(10, 64, 105, 0.2);
+    }
+
+    &.cyan-face .face {
+      background-color: rgba(87, 202, 244, 0.2);
+    }
+
+    &.gray-face .face {
+      background-color: rgba(68, 68, 68, 0.2);
+    }
+
+    &.lightGray-face .face {
+      background-color: rgba(145, 145, 145, 0.2);
+    }
+
+    &.lighterGray-face .face {
+      background-color: rgba(145, 145, 145, 0.05);
+    }
+  }
+
+  .growing-bar {
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(236, 0, 140, 0.6);
+    width: 100%;
+    height: 48px;
+  }
+}

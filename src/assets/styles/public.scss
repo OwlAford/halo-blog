@@ -1,0 +1,129 @@
+@import './variable.scss';
+
+@font-face {
+  @include setIconFont(font_156150_lvf9yaeuh4ghw7b9);
+}
+
+@font-face {
+  font-family: 'halofont';
+  src: url('../fonts/halo.ttf') format('truetype');
+}
+
+.halofont {
+  @include fontSetter;
+  font-family: 'halofont' !important;
+}
+
+.iconfont {
+  @include fontSetter;
+  font-family: 'iconfont' !important;
+  font-size: 20px;
+}
+
+body {
+  color: $fc;
+  font-size: $ft;
+  background-color: $bg;
+  user-select: none;
+  min-width: 1200px;
+
+  &:lang(zh-CN) {
+    font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+  }
+}
+
+.app-core {
+min-width: 1200px;
+min-height: 400px;
+}
+
+.gitfont {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-skew-shadow {
+  position: relative;
+  
+  &:after {
+    content: '';
+    display: block;
+    background-image: linear-gradient(180deg, rgba(0,0,0,.3), transparent);
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transform: skew(45deg);
+    transform-origin: 0 0;
+    width: 100%;
+  }
+}
+
+.iScrollVerticalScrollbar {
+  position: absolute;
+  z-index: 9;
+  width: 7px;
+  bottom: 2px;
+  top: 2px;
+  right: 1px;
+  overflow: hidden;
+  pointer-events: none;
+
+  .iScrollIndicator {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 100%;
+    display: block;
+  }
+}
+
+.app-switch {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 20px;
+
+  .item-btn {
+    padding: 12px 26px;
+    background-color: #fff;
+    border: 1px solid #2f92f8;
+    color: #2f92f8;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 3;
+
+    &.active {
+      color: #fff;
+      background-color: #2f92f8;
+      box-shadow: 
+        0 14px 24px -6px rgb(100, 176, 250),
+        0 22px 40px 2px rgb(186, 220, 255);
+      z-index: 1;
+    }
+
+    & + .item-btn {
+      border-left: 0;
+    }
+
+    &:first-child {
+      border-bottom-left-radius: 22px;
+      border-top-left-radius: 22px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 22px;
+      border-top-right-radius: 22px;
+    }
+  }
+}

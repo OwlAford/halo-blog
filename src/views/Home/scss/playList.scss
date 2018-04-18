@@ -1,0 +1,167 @@
+@keyframes in-right {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+  to {
+    transform: rotate3d(0, -1, 0, 90deg)
+  }
+}
+
+@keyframes out-right {
+  from {
+    transform: rotate3d(0, -1, 0, 90deg)
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+.home-list {
+  font-size: 14px;
+  color: #333;
+  width: 1200px;
+  height: 275px;
+  margin: 0 auto 40px;
+  position: relative;
+
+  .list-wrap {
+    width: 100%;
+    padding: 30px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 216px;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 14px;
+      width: 1160px;
+      position: absolute;
+      bottom: -14px;
+      left: 20px;
+      background-color: #fff;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      opacity: .6;
+    }
+
+  }
+
+  .item-wrap {
+    width: 160px;
+
+    & + .item-wrap {
+      margin-left: 30px;
+    }
+
+    .info {
+      padding: 10px;
+
+      .name {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .singer {
+        font-size: 12px;
+        opacity: .8;
+      }
+    }
+  }
+
+  .item {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    perspective: 1800px;
+
+    img, canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    canvas {
+      opacity: .6;
+    }
+
+    .album {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      transform-origin: 50% 50% -80px;
+      box-shadow: 0 14px 24px -4px rgba(0, 0, 0, .3);
+      animation: 200ms ease-out 0ms 1 normal forwards;
+
+      .cover,
+      .title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .title {
+        background-color:#000;
+        text-align: center;
+        transform: translate3d(0, 0, -1px);
+        position: relative;
+        
+        .iconfont {
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin: -25px 0 0 -25px;
+          line-height: 50px;
+          text-align: center;
+          font-size: 24px;
+          cursor: pointer;
+
+          &:after {
+            color: #fff;
+            content: '\e603'
+          }
+
+          &.pause:after {
+            content: '\e9d3'
+          }
+        }
+      }
+    }
+
+    &.in-right .title,
+    &.out-right .title {
+      transform-origin: 0% 0%;
+      transform: translate3d(100%, 0, 0) rotate3d(0, 1, 0, 90deg);
+    }
+
+    &.in-right .album {
+      box-shadow: none;
+      animation-name: in-right;
+      animation-play-state: running;
+    }
+
+    &.out-right .album {
+      animation-name: out-right;
+      animation-play-state: running;
+    }
+  }
+
+  .app-bubbly-button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin: 0 0 -22px -100px;
+    z-index: 99;
+  }
+}
