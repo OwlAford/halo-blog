@@ -5,6 +5,8 @@ module.exports = {
   ],
   template: '<rootDir>/public/index.html',
   devServerPort: 3001,
+  buildServerPort: 3002,
+  productionSourceMap: false,
   publicPath: '/halo/',
   proxyTable: {
     '/music': {

@@ -5,12 +5,13 @@
   "main": "./src/index.js",
   "scripts": {
     "serve": "nail serve",
-    "build": "nail build --analyze"
+    "build": "nail build --analyze",
+    "build:serve": "nail build --serve"
   },
   "author": "OwlAford",
   "license": "MIT",
   "engines": {
-    "node": "^6.14.0 || ^8.10.0 || >=9.10.0"
+    "node": ">=6"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -33,6 +34,6 @@
     "ua-parser-js": "^0.7.17"
   },
   "devDependencies": {
-    "nail-cli": "0.1.8"
+    "nail-cli": "0.1.17"
   }
 }
