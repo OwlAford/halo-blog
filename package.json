@@ -34,6 +34,6 @@
     "ua-parser-js": "^0.7.17"
   },
   "devDependencies": {
-    "nail-cli": "0.1.17"
+    "nail-cli": "0.1.18"
   }
 }

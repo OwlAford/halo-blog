@@ -1,3 +1,4 @@
+import registerServiceWorker from './registerServiceWorker'
 import '~/utils/raf'
 import React from 'react'
 import { render } from 'react-dom'
@@ -17,3 +18,5 @@ render(
   </Provider>,
   document.getElementById('MOUNT_NODE')
 )
+
+registerServiceWorker()

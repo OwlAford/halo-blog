@@ -1,3 +1,4 @@
+import './registerServiceWorker'
 import '~/libs/focus'
 import '~/utils/raf'
 import React from 'react'
