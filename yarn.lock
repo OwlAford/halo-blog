@@ -4626,9 +4626,9 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-nail-cli@0.1.26:
-  version "0.1.26"
-  resolved "https://registry.npmjs.org/nail-cli/-/nail-cli-0.1.26.tgz#229f7d4f2f0492bc4eb78661e5b743eee6547104"
+nail-cli@0.1.28:
+  version "0.1.28"
+  resolved "https://registry.npmjs.org/nail-cli/-/nail-cli-0.1.28.tgz#5065d6e41bcdfc0c67caee28f4d01731a49f777a"
   dependencies:
     "@babel/core" "^7.0.0-beta.46"
     "@babel/node" "^7.0.0-beta.46"
