@@ -4,6 +4,7 @@ node_modules/
 analyze/
 dist/
 test/
+coverage/
 
 npm-debug.log*
 yarn-debug.log*
