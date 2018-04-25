@@ -5,16 +5,16 @@
   "main": "./src/index.js",
   "scripts": {
     "update": "yarn upgrade-interactive --latest",
-    "serve": "nail serve",
-    "build": "nail build",
-    "build:anly": "nail build --analyze",
-    "build:prev": "nail build --preview",
-    "unit": "nail unit",
-    "unit:cov": "nail unit --coverage",
-    "e2e": "nail e2e",
-    "e2e:open": "nail e2e --open",
-    "prev-e2e": "nail e2e --production",
-    "prev-e2e:open": "nail e2e --open --production"
+    "serve": "nail-cli serve",
+    "build": "nail-cli build",
+    "build:anly": "nail-cli build --analyze",
+    "build:prev": "nail-cli build --preview",
+    "unit": "nail-cli unit",
+    "unit:cov": "nail-cli unit --coverage",
+    "e2e": "nail-cli e2e",
+    "e2e:open": "nail-cli e2e --open",
+    "prev-e2e": "nail-cli e2e --production",
+    "prev-e2e:open": "nail-cli e2e --open --production"
   },
   "author": "OwlAford",
   "license": "MIT",
@@ -42,6 +42,6 @@
     "ua-parser-js": "^0.7.17"
   },
   "devDependencies": {
-    "nail-cli": "0.3.2"
+    "nail-cli": "0.3.3"
   }
 }
