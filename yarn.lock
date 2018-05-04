@@ -5781,9 +5781,9 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-nail-cli@0.4.4:
-  version "0.4.4"
-  resolved "https://registry.npmjs.org/nail-cli/-/nail-cli-0.4.4.tgz#72c1a1fb033b963ae74ada8c4cbf993f2933a085"
+nail-cli@0.4.5:
+  version "0.4.5"
+  resolved "https://registry.npmjs.org/nail-cli/-/nail-cli-0.4.5.tgz#a7d883611136e69952f93c96fe6a1406d8a7f698"
   dependencies:
     "@babel/core" "^7.0.0-beta.46"
     "@babel/node" "^7.0.0-beta.46"
@@ -5859,6 +5859,7 @@ nail-cli@0.4.4:
     postcss-nesting "^5.0.0"
     postcss-selector-matches "^3.0.1"
     postcss-selector-not "^3.0.1"
+    raw-loader "^0.5.1"
     react-error-overlay "^4.0.0"
     recursive-readdir "^2.2.2"
     sass-loader "^7.0.1"
@@ -7159,6 +7160,10 @@ raw-body@2.3.2:
     http-errors "1.6.2"
     iconv-lite "0.4.19"
     unpipe "1.0.0"
+
+raw-loader@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
   version "1.2.6"
