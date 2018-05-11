@@ -2,6 +2,6 @@ import Loadable from 'react-loadable'
 import Spin from '^/Spin'
 
 export default Loadable({
-  loader: () => import('./Design'),
+  loader: () => import(/* webpackChunkName: "design" */ './Design'),
   loading: Spin
 })

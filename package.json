@@ -27,22 +27,22 @@
     "dynamics.js": "^1.1.5",
     "lodash": "^4.17.10",
     "md5": "^2.2.1",
-    "mobx": "^4.2.0",
+    "mobx": "^4.2.1",
     "mobx-react": "^5.1.2",
     "mobx-react-devtools": "^5.0.1",
     "normalize.css": "^8.0.0",
     "qrcode": "^1.2.0",
-    "qs": "^6.5.1",
+    "qs": "^6.5.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-loadable": "^5.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "stackblur-canvas": "^1.4.1",
-    "ua-parser-js": "^0.7.17"
+    "ua-parser-js": "^0.7.18"
   },
   "devDependencies": {
     "cypress": "^2.1.0",
-    "nail-cli": "0.5.5"
+    "nail-cli": "0.6.0"
   }
 }

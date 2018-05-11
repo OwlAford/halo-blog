@@ -2,6 +2,6 @@ import Loadable from 'react-loadable'
 import Spin from '^/Spin'
 
 export default Loadable({
-  loader: () => import('./Chat'),
+  loader: () => import(/* webpackChunkName: "chat" */ './Chat'),
   loading: Spin
 })
