@@ -3,15 +3,7 @@ node_js:
   - 'stable'
   - '8'
   - '6'
-env:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
 script:
-  - yarn run unit:c
-  - yarn run lint
-  - yarn run build
+  - npm run unit:c
+  - npm run lint
+  - npm run build
