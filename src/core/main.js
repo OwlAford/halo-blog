@@ -1,4 +1,4 @@
-import './registerServiceWorker'
+import registerServiceWorker from './registerServiceWorker'
 import '~/libs/focus'
 import '~/utils/raf'
 import React from 'react'
@@ -22,3 +22,5 @@ render(
   </Provider>,
   document.getElementById('MOUNT_NODE')
 )
+
+registerServiceWorker()
