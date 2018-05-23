@@ -1,4 +1,5 @@
 module.exports = {
+  pwa: true,
   entry: [
     '@babel/polyfill',
     '<rootDir>/src/core/entry.js'
