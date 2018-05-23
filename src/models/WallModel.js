@@ -6,7 +6,7 @@ export default class ListModel {
 
   @action
   getFavList (cb, err) {
-    axios.get('https://owlaford.github.io/data/wallpaper-favorite.json')
+    axios.get('/data/wallpaper-favorite.json')
       .then(({ data }) => {
         this.favList = shuffle(data.src || [])
         cb && cb(data)

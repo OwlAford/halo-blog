@@ -13,6 +13,10 @@ module.exports = {
     '/music': {
       target: 'http://yuis.qiniudn.com',
       changeOrigin: true
+    },
+    '/data': {
+      target: 'http://yuis.qiniudn.com',
+      changeOrigin: true
     }
   },
   alias: {

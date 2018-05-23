@@ -101,7 +101,7 @@ export default class HomeModel {
 
   @action
   getUserInfo (cb, err) {
-    axios.get('https://owlaford.github.io/data/userInfo.json')
+    axios.get('/data/userInfo.json')
       .then(({ data }) => {
         this.userInfo.author = data.author
         this.userInfo.bio = data.bio

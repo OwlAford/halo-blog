@@ -27,7 +27,7 @@
     "dynamics.js": "^1.1.5",
     "lodash": "^4.17.10",
     "md5": "^2.2.1",
-    "mobx": "^4.2.1",
+    "mobx": "^4.3.0",
     "mobx-react": "^5.1.2",
     "mobx-react-devtools": "^5.0.1",
     "normalize.css": "^8.0.0",
