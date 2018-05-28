@@ -1,4 +1,5 @@
 import React from 'react'
+import { Base64 } from 'js-base64'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 
@@ -36,7 +37,7 @@ export default class Tools extends React.Component {
             <button className='iconfont trans-btn' onClick={this.cleanBaseInputHandle}>&#xe615;</button>
           </div>
           <div className='result'>
-            <textarea name='ecodeString' value={window.btoa(this.base64Encode)} />
+            <textarea name='ecodeString' value={Base64.encode(this.base64Encode)} />
           </div>
         </div>
       </div>
