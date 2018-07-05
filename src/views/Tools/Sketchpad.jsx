@@ -106,6 +106,7 @@ export default class Sketchpad extends React.Component {
     const ctx = this.ctx
     ctx.fillStyle = this.bgColor = color
     ctx.fillRect(0, 0, this.rWidth, this.rHeight)
+    // ctx.globalCompositeOperation = 'destination-out'
     this.stackSave()
   }
 

@@ -1,0 +1,99 @@
+.app-wrap {
+  font-size: 0.24rem;
+  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  .page-login {
+    .logo {
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0.6rem auto 0.4rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .log {
+      text-align: center;
+      color: #999;
+    }
+
+    .form {
+      padding: 0.3rem 0.4rem;
+
+      .ipt {
+        input {
+          font-size: 0.28rem;
+          padding: 0.36rem 0.3rem;
+          width: 100%;
+          outline: none;
+          box-sizing: border-box;
+          border: none;
+          border-bottom: 1px solid #eee;
+          transition: border-bottom .3s;
+
+          &::-webkit-input-placeholder {
+            color: #999;
+          }
+        }
+
+        .warn {
+          border-bottom-color: #ff7a73;
+        }
+      }
+
+      .switch {
+        padding: 0.3rem;
+        display: flex;
+        justify-content: flex-end;
+        height: 0.48rem;
+        line-height: 0.48rem;
+
+        .radio {
+          height: 0.48rem;
+          width: 0.8rem;
+          border-radius: 0.25rem;
+          background-color: #1094fb;
+          position: relative;
+
+          &:after {
+            content: '';
+            display: block;
+            height: 0.4rem;
+            width: 0.4rem;
+            border-radius: 0.2rem;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 0.04rem;
+            top: 0.04rem;
+            box-shadow: 0 0.04rem 0.12rem rgba(0, 0, 0, .16);
+            transition: left .3s;
+          }
+        }
+
+        &:before {
+          content: '签到';
+          padding: 0 0.2rem;
+          color: #29316b;
+        }
+
+        &.out {
+          &:before {
+            content: '签退';
+            color: #0f291f;
+          }
+
+          .radio {
+            background-color: #28bd8b;
+
+            &:after {
+              left: 0.36rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

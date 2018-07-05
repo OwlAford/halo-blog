@@ -3,6 +3,7 @@
 node_modules/
 coverage/
 dist/
+dist-boot/
 test/
 report/
 /tests/e2e/videos/
