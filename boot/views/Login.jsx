@@ -86,11 +86,11 @@ export default class LoginView extends React.Component {
       }).then(res => {
         const data = JSON.parse(res.data.result)
         if (data.successed) {
-          const { signStatu, signOperName, signInTimeAllStr, signOutTimeAllStr } = data.returnObject
-          const time = Number(signStatu) === 0 ? signInTimeAllStr : signOutTimeAllStr
-          const status = Number(signStatu) === 0 ? '签到成功' : '签退成功'
+          const { signOperName, signInTimeAllStr, signOutTimeAllStr } = data.returnObject
+          const time = loginState === 'in' ? signInTimeAllStr : signOutTimeAllStr
+          const status = loginState === 'in' ? '签到成功' : '签退成功'
           this.setState({
-            tips: `${time} ${status}`
+            tips: `${signOperName} ${time} ${status}`
           })
           toast(`${status}!`)
           localStorage.setItem('userName', params.userName)
@@ -98,7 +98,7 @@ export default class LoginView extends React.Component {
         } else {
           toast(`${this.state.loginState === 'in' ? '签到' : '签退'}失败！`)
         }
-      }).catch(err => {
+      }).catch(() => {
         toast(`${this.state.loginState === 'in' ? '签到' : '签退'}失败，请重试！`)
       })
     }
