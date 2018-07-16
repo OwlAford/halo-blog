@@ -25,7 +25,7 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "dynamics.js": "^1.1.5",
-    "js-base64": "^2.4.5",
+    "js-base64": "^2.4.6",
     "lodash": "^4.17.10",
     "md5": "^2.2.1",
     "mobx": "^5.0.3",
@@ -44,6 +44,6 @@
   },
   "devDependencies": {
     "cypress": "^3.0.2",
-    "nail-cli": "0.7.6"
+    "nail-cli": "0.7.7"
   }
 }
