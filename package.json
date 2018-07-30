@@ -30,7 +30,7 @@
     "md5": "^2.2.1",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
-    "mobx-react-devtools": "^5.0.1",
+    "mobx-react-devtools": "^6.0.2",
     "normalize.css": "^8.0.0",
     "qrcode": "^1.2.0",
     "qs": "^6.5.2",
@@ -43,7 +43,7 @@
     "ua-parser-js": "^0.7.18"
   },
   "devDependencies": {
-    "cypress": "^3.0.2",
-    "@nail-cli/core": "^1.0.0"
+    "@nail-cli/core": "^1.0.1",
+    "cypress": "^3.0.2"
   }
 }
