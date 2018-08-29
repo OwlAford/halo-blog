@@ -7,8 +7,7 @@ import { initImage, downloadCanvasImage } from '~/libs/tools'
 import './scss/sketchpad.scss'
 
 @withToast
-@observer
-export default class Sketchpad extends React.Component {
+@observer class Sketchpad extends React.Component {
   @observable bgColor = null
   @observable beforeProgress = 9
   @observable currentProgress = 9
@@ -386,3 +385,5 @@ export default class Sketchpad extends React.Component {
     )
   }
 }
+
+export default Sketchpad

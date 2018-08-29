@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 import logo from '#/images/logo.png'
 
 @inject(stores => {
-  const {login: { checkCodeSrc }} = stores
+  const { login: { checkCodeSrc } } = stores
   return {
     vcodeSrc: checkCodeSrc,
     getSession: title => stores.login.getSession(),
@@ -15,7 +15,7 @@ import logo from '#/images/logo.png'
 
 @observer
 // @withRouter
-export default class LoginView extends React.Component {
+class LoginView extends React.Component {
   @observable userName = 'admin'
   @observable pswd = '123456'
   @observable vcode = ''
@@ -87,3 +87,5 @@ export default class LoginView extends React.Component {
     )
   }
 }
+
+export default LoginView

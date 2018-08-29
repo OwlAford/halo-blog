@@ -20,8 +20,7 @@ import { withToast } from '^/Toast'
   }
 })
 
-@observer
-export default class ChatList extends React.Component {
+@observer class ChatList extends React.Component {
   couldAutoScroll = true
   delta = 0
 
@@ -128,3 +127,5 @@ export default class ChatList extends React.Component {
     )
   }
 }
+
+export default ChatList

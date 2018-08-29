@@ -3,8 +3,7 @@ import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 import md5 from 'md5'
 
-@observer
-export default class MD5 extends React.Component {
+@observer class MD5 extends React.Component {
   @observable md5Encode = ''
 
   @action
@@ -44,3 +43,5 @@ export default class MD5 extends React.Component {
     )
   }
 }
+
+export default MD5

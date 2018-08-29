@@ -4,15 +4,17 @@ import { Redirect } from 'react-router-dom'
 import { routeLoginPath, routeIndexPath } from '~/constants/config'
 
 @inject(stores => {
-  const {login: { isLogin }} = stores
+  const { login: { isLogin } } = stores
   return {
     isLogin
   }
 })
 
-export default class MismatchView extends React.Component {
+class MismatchView extends React.Component {
   render () {
     const { isLogin } = this.props
     return <Redirect to={isLogin ? routeIndexPath : routeLoginPath} />
   }
 }
+
+export default MismatchView

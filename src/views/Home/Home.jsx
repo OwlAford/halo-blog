@@ -10,8 +10,7 @@ import Toolbar from '~/layouts/Toolbar'
 import './scss/content.scss'
 
 @withRouter
-@observer
-export default class Home extends React.Component {
+@observer class Home extends React.Component {
   @observable clientH = 540
   @observable clientW = 1200
 
@@ -51,3 +50,5 @@ export default class Home extends React.Component {
     )
   }
 }
+
+export default Home

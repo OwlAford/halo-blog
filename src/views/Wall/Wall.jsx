@@ -19,8 +19,7 @@ import './scss/index.scss'
   }
 })
 
-@observer
-export default class Wall extends React.Component {
+@observer class Wall extends React.Component {
   groupIndex = 1
   group = intNum(Math.ceil(document.documentElement.clientHeight / 90), 3)
 
@@ -66,3 +65,5 @@ export default class Wall extends React.Component {
     )
   }
 }
+
+export default Wall

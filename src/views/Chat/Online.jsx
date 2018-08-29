@@ -26,8 +26,7 @@ import BubblyButton from '^/BubblyButton'
   }
 })
 
-@observer
-export default class Online extends React.Component {
+@observer class Online extends React.Component {
   @observable nickName = ''
   @observable avatarType = ''
 
@@ -149,3 +148,5 @@ export default class Online extends React.Component {
     )
   }
 }
+
+export default Online

@@ -18,8 +18,7 @@ import './scss/index.scss'
   }
 })
 
-@observer
-export default class Shoot extends React.Component {
+@observer class Shoot extends React.Component {
   groupIndex = 1
   group = Math.ceil(document.documentElement.clientHeight / 600)
 
@@ -66,3 +65,5 @@ export default class Shoot extends React.Component {
     )
   }
 }
+
+export default Shoot

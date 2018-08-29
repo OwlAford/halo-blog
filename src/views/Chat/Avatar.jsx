@@ -4,8 +4,7 @@ import { observer } from 'mobx-react'
 import classNames from 'classnames'
 import './scss/avatar.scss'
 
-@observer
-export default class Avatar extends React.Component {
+@observer class Avatar extends React.Component {
   @observable current = ''
 
   avatarList = [
@@ -56,3 +55,5 @@ export default class Avatar extends React.Component {
     )
   }
 }
+
+export default Avatar

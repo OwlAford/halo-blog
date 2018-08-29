@@ -3,8 +3,7 @@ import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 import './scss/index.scss'
 
-@observer
-export default class RobotGirl extends React.Component {
+@observer class RobotGirl extends React.Component {
   @observable lookState = 'none'
   @observable pozLeft = window.innerWidth / 2
   @observable pozTop = window.innerHeight / 2
@@ -136,3 +135,5 @@ export default class RobotGirl extends React.Component {
     )
   }
 }
+
+export default RobotGirl

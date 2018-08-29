@@ -18,8 +18,7 @@ import EmptyBox from '^/EmptyBox'
 })
 
 @observer
-@withToast
-export default class RepoStar extends React.Component {
+@withToast class RepoStar extends React.Component {
   @observable repoData = ''
 
   @action
@@ -95,3 +94,5 @@ export default class RepoStar extends React.Component {
     )
   }
 }
+
+export default RepoStar

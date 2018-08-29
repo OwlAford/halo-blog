@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 import Todo from './Todo'
 
 @inject(stores => {
-  const {todos: { todos, unfinishedTodoCount }} = stores
+  const { todos: { todos, unfinishedTodoCount } } = stores
   return {
     myTodos: todos,
     unTodos: unfinishedTodoCount,

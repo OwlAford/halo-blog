@@ -29,8 +29,7 @@ import avatar from './images/avatar.jpg'
   }
 })
 
-@observer
-export default class MusicBox extends React.Component {
+@observer class MusicBox extends React.Component {
   @observable cricleState = 'hide'
   @observable avatarState = 'hide'
   @observable musicReady = false
@@ -497,3 +496,5 @@ export default class MusicBox extends React.Component {
     ]
   }
 }
+
+export default MusicBox

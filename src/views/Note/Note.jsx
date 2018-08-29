@@ -19,8 +19,7 @@ import './scss/index.scss'
   }
 })
 
-@observer
-export default class Note extends React.Component {
+@observer class Note extends React.Component {
   groupIndex = 1
   group = Math.ceil(document.documentElement.clientHeight / 100)
 
@@ -80,3 +79,5 @@ export default class Note extends React.Component {
     )
   }
 }
+
+export default Note

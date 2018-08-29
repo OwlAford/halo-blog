@@ -14,8 +14,7 @@ import './scss/terminal.scss'
   }
 })
 
-@observer
-export default class Terminal extends React.Component {
+@observer class Terminal extends React.Component {
   @observable step = 0
   @observable menuSelected = null
   @observable applySelected = null
@@ -175,3 +174,5 @@ export default class Terminal extends React.Component {
     ]
   }
 }
+
+export default Terminal

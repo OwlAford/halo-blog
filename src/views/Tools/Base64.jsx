@@ -3,8 +3,7 @@ import { Base64 } from 'js-base64'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 
-@observer
-export default class Tools extends React.Component {
+@observer class BaseEncode extends React.Component {
   @observable base64Encode = ''
 
   @action
@@ -44,3 +43,5 @@ export default class Tools extends React.Component {
     )
   }
 }
+
+export default BaseEncode

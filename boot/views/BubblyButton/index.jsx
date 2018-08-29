@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import './scss/index.scss'
 
-export default class BubblyButton extends React.Component {
+class BubblyButton extends React.Component {
   animateButton (e) {
     const { clickEvent } = this.props
     const $elClass = e.target.classList
@@ -30,3 +30,5 @@ export default class BubblyButton extends React.Component {
     )
   }
 }
+
+export default BubblyButton

@@ -6,8 +6,7 @@ import md5 from 'md5'
 import QRCode from 'qrcode'
 import { downloadCanvasImage } from '~/libs/tools'
 
-@observer
-export default class QRCodeComponent extends React.Component {
+@observer class QRDecode extends React.Component {
   @observable QRCodeString = ''
 
   @action
@@ -65,3 +64,5 @@ export default class QRCodeComponent extends React.Component {
     )
   }
 }
+
+export default QRDecode

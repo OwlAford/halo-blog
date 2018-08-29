@@ -2,8 +2,7 @@ import React from 'react'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 
-@observer
-export default class LazyDisplay extends React.Component {
+@observer class LazyDisplay extends React.Component {
   @observable remove = true
 
   clearTimer () {
@@ -33,3 +32,5 @@ export default class LazyDisplay extends React.Component {
     return this.remove ? null : children
   }
 }
+
+export default LazyDisplay

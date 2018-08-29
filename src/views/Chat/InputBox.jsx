@@ -23,8 +23,7 @@ import { withToast } from '^/Toast'
   }
 })
 
-@observer
-export default class InputBox extends React.Component {
+@observer class InputBox extends React.Component {
   @observable showEmojiList = false
   @observable chatingText = ''
   @observable sendIngState = false
@@ -129,3 +128,5 @@ export default class InputBox extends React.Component {
     )
   }
 }
+
+export default InputBox

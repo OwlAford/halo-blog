@@ -724,9 +724,9 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@nail-cli/core@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.1.0.tgz#d42415f9f0868ef4098dfe95289489c2ac32fa61"
+"@nail-cli/core@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.1.1.tgz#ee3360ec69299206d7311766b9b1e4c7cc8a50a5"
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/node" "^7.0.0"
@@ -762,8 +762,8 @@
     detect-port-alt "^1.1.6"
     eslint "5.4.0"
     eslint-config-airbnb "^17.1.0"
-    eslint-config-standard "11.0.0"
-    eslint-config-standard-react "^6.0.0"
+    eslint-config-standard "12.0.0"
+    eslint-config-standard-react "^7.0.2"
     eslint-friendly-formatter "^4.0.0"
     eslint-loader "^2.1.0"
     eslint-plugin-babel "^5.1.0"
@@ -772,7 +772,7 @@
     eslint-plugin-node "^7.0.1"
     eslint-plugin-promise "^4.0.0"
     eslint-plugin-react "^7.11.1"
-    eslint-plugin-standard "^3.0.1"
+    eslint-plugin-standard "^4.0.0"
     execa "^1.0.0"
     express "^4.16.3"
     file-loader "^2.0.0"
@@ -3173,19 +3173,19 @@ eslint-config-airbnb@^17.1.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-standard-jsx@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/eslint-config-standard-jsx/-/eslint-config-standard-jsx-5.0.0.tgz#4abfac554f38668e0078c664569e7b2384e5d2aa"
+eslint-config-standard-jsx@^6.0.1:
+  version "6.0.2"
+  resolved "https://registry.npmjs.org/eslint-config-standard-jsx/-/eslint-config-standard-jsx-6.0.2.tgz#90c9aa16ac2c4f8970c13fc7efc608bacd02da70"
 
-eslint-config-standard-react@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/eslint-config-standard-react/-/eslint-config-standard-react-6.0.0.tgz#d366d6c3c092426fd3ae794a4ca0b3cb131f2964"
+eslint-config-standard-react@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.npmjs.org/eslint-config-standard-react/-/eslint-config-standard-react-7.0.2.tgz#80b51a0e0c371ef987679ee134768457a5b6db92"
   dependencies:
-    eslint-config-standard-jsx "^5.0.0"
+    eslint-config-standard-jsx "^6.0.1"
 
-eslint-config-standard@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-11.0.0.tgz#87ee0d3c9d95382dc761958cbb23da9eea31e0ba"
+eslint-config-standard@12.0.0:
+  version "12.0.0"
+  resolved "https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-12.0.0.tgz#638b4c65db0bd5a41319f96bba1f15ddad2107d9"
 
 eslint-friendly-formatter@^4.0.0:
   version "4.0.1"
@@ -3288,9 +3288,9 @@ eslint-plugin-react@^7.11.1:
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
 
-eslint-plugin-standard@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz#34d0c915b45edc6f010393c7eef3823b08565cf2"
+eslint-plugin-standard@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-4.0.0.tgz#f845b45109c99cd90e77796940a344546c8f6b5c"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"

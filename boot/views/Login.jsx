@@ -5,7 +5,7 @@ import Logo from '#/img/logo.png'
 import toast from './toast'
 import axios from 'axios'
 
-export default class LoginView extends React.Component {
+class LoginView extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -154,3 +154,5 @@ export default class LoginView extends React.Component {
     )
   }
 }
+
+export default LoginView

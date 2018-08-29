@@ -19,8 +19,7 @@ import './scss/index.scss'
   }
 })
 
-@observer
-export default class Design extends React.Component {
+@observer class Design extends React.Component {
   groupIndex = 1
   group = num2even(Math.ceil(document.documentElement.clientHeight / 320))
 
@@ -71,3 +70,5 @@ export default class Design extends React.Component {
     )
   }
 }
+
+export default Design

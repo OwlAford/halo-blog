@@ -20,8 +20,7 @@ import './scss/index.scss'
   }
 })
 
-@observer
-export default class Toolbar extends React.Component {
+@observer class Toolbar extends React.Component {
   @observable showMenu = false
   @observable girlZoom = 1
   @observable menuY = 0
@@ -155,3 +154,5 @@ export default class Toolbar extends React.Component {
     ]
   }
 }
+
+export default Toolbar

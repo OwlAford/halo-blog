@@ -21,8 +21,7 @@ import Chat from '../Chat'
   }
 })
 
-@observer
-export default class ChildNode extends React.Component {
+@observer class ChildNode extends React.Component {
   componentWillUnmount () {
     window.removeEventListener('scroll', this.initScreen)
   }
@@ -77,3 +76,5 @@ export default class ChildNode extends React.Component {
     )
   }
 }
+
+export default ChildNode
