@@ -724,9 +724,9 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@nail-cli/core@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.1.2.tgz#168dbe9ce8dc3c2f9a3139d9f6ce80eb73efea24"
+"@nail-cli/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.2.0.tgz#d6a0f6e8fe28c7ec770f56918b23df2aaebe6411"
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/node" "^7.0.0"
@@ -798,6 +798,7 @@
     postcss-flexibility "^2.0.0"
     postcss-import "^12.0.0"
     postcss-loader "^3.0.0"
+    progress-bar-webpack-plugin "^1.11.0"
     raw-loader "^0.5.1"
     react-error-overlay "^4.0.1"
     read-yaml "^1.1.0"
@@ -6521,7 +6522,7 @@ object-visit@^1.0.0:
   dependencies:
     isobject "^3.0.0"
 
-object.assign@^4.1.0:
+object.assign@^4.0.1, object.assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/object.assign/-/object.assign-4.1.0.tgz#968bf1100d7956bb3ca086f006f846b3bc4008da"
   dependencies:
@@ -7319,7 +7320,15 @@ process@^0.11.10:
   version "0.11.10"
   resolved "https://registry.npmjs.org/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
-progress@1.1.8:
+progress-bar-webpack-plugin@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.npmjs.org/progress-bar-webpack-plugin/-/progress-bar-webpack-plugin-1.11.0.tgz#4f801288443c55ec029b20cbfdcbf3e1dc17f852"
+  dependencies:
+    chalk "^1.1.1"
+    object.assign "^4.0.1"
+    progress "^1.1.8"
+
+progress@1.1.8, progress@^1.1.8:
   version "1.1.8"
   resolved "https://registry.npmjs.org/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
 
