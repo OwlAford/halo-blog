@@ -29,6 +29,7 @@ import md5 from 'md5'
           <div className='in-string'>
             <input
               type='text'
+              defaultValue=''
               onChange={this.handleMD5Encode}
               placeholder='请输入加密字符'
               ref={node => { this.$md5Ipt = node }}
@@ -36,7 +37,7 @@ import md5 from 'md5'
             <button className='iconfont trans-btn' onClick={this.cleanInputHandle}>&#xe615;</button>
           </div>
           <div className='result'>
-            <textarea name='ecodeString' value={this.md5Encode ? md5(this.md5Encode) : ''} />
+            <textarea name='ecodeString' readOnly value={this.md5Encode ? md5(this.md5Encode) : ''} />
           </div>
         </div>
       </div>

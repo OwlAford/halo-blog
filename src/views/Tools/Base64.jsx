@@ -29,6 +29,7 @@ import { observer } from 'mobx-react'
           <div className='in-string'>
             <input
               type='text'
+              defaultValue=''
               onChange={this.handleBase64Encode}
               placeholder='请输入加密字符'
               ref={node => { this.$base64Ipt = node }}
@@ -36,7 +37,7 @@ import { observer } from 'mobx-react'
             <button className='iconfont trans-btn' onClick={this.cleanBaseInputHandle}>&#xe615;</button>
           </div>
           <div className='result'>
-            <textarea name='ecodeString' value={Base64.encode(this.base64Encode)} />
+            <textarea name='ecodeString' readOnly value={Base64.encode(this.base64Encode)} />
           </div>
         </div>
       </div>
