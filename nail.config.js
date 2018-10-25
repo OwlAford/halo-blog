@@ -11,11 +11,11 @@ module.exports = {
   publicPath: '/halo/',
   proxyTable: {
     '/music': {
-      target: 'http://yuis.qiniudn.com',
+      target: 'http://106.14.138.86:7000/',
       changeOrigin: true
     },
     '/data': {
-      target: 'http://yuis.qiniudn.com',
+      target: 'http://106.14.138.86:7000/',
       changeOrigin: true
     }
   },

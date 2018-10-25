@@ -12,7 +12,7 @@ module.exports = {
   outputDir: '<rootDir>/dist-boot',
   proxyTable: {
     '/lazyMan': {
-      target: 'http://flameapp.cn/',
+      target: 'http://106.14.138.86:8080/',
       changeOrigin: true
     }
   },

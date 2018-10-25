@@ -14,7 +14,7 @@ export default class HomeModel {
     bio: '',
     playlist: []
   }
-  @observable hobby = []
+  @observable hobby = {}
   @observable starredGotten = false
   @observable girlShow = false
   @observable girlSing = false

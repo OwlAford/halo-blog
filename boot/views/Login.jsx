@@ -81,7 +81,7 @@ class LoginView extends React.Component {
         headers: {
           'Content-type': 'application/json'
         },
-        url: 'https://flameapp.cn/lazyMan/morning/good',
+        url: 'http://106.14.138.86:8080/lazyMan/morning/good',
         data: JSON.stringify(params)
       }).then(res => {
         const data = JSON.parse(res.data.result)
