@@ -19,7 +19,7 @@ export default class HomeModel {
   @observable girlShow = false
   @observable girlSing = false
 
-  musicLink = 'http://yuis.qiniudn.com/music/singing.mp3'
+  musicLink = '/music/singing.mp3'
 
   constructor (scrollableState) {
     this.scrollable = scrollableState
