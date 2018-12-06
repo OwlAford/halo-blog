@@ -1,4 +1,12 @@
 .home-shoot {
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
+
+  .app-pic-box {
+    .content {
+      width: 950px;
+      height: auto;
+      min-height: 484px;
+    }
+  }
 }

@@ -57,11 +57,7 @@ import './scss/index.scss'
                 <div className='content'>
                   <div className='thumb'>
                     <img
-                      src={
-                        item.cover
-                          ? `${item.cover}?imageView2/1/w/200/h/200/interlace/0/q/100`
-                          : book
-                      }
+                      src={book}
                       alt={item.title}
                     />
                   </div>

@@ -41,6 +41,9 @@
     box-shadow: 0 26px 46px -11px rgba(0, 0, 0, 0.68);
     -webkit-box-shadow: 0 26px 46px -11px rgba(0, 0, 0, 0.68);
   }
+  .imgBox img {
+    width: 100%;
+  }
 </style>
 </head>
 <body>
@@ -60,8 +63,7 @@
     })
   }
   var params = window.location.search.substr(1).split('&');
-  var host = 'https://1x.com/images/user/';
-  var file = host + params[0];
+  var file = params[0];
   var thumbFile = file;
   var title = decodeURI(params[1]) || '未命名图片';
   document.title = title;

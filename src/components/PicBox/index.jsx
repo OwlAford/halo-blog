@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import './scss/index.scss'
 
-export default ({ title, time, lnk, clickEvent, notitle }) => (
+export default ({ title, lnk, clickEvent, notitle }) => (
   <div
     className={classNames('app-pic-box', 'app-skew-shadow', {
       'notitle': notitle
@@ -11,8 +11,7 @@ export default ({ title, time, lnk, clickEvent, notitle }) => (
     {
       !notitle &&
       <div className='title'>
-        <div className='inner'>{title || '未命名'}</div>
-        <div className='timestamp'>{time}</div>
+        <div className='inner'>{title || '佚名'}</div>
       </div>
     }
     <div className='content'>

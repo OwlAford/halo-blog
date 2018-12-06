@@ -7,14 +7,14 @@ import './scss/index.scss'
 
 @inject(stores => {
   const {
-    shoot: { list },
+    shoot: { shootList },
     home: { isAtBottom }
   } = stores
 
   return {
     isAtBottom,
-    list,
-    getShootList: cb => stores.shoot.getList(cb)
+    shootList,
+    getShootList: cb => stores.shoot.getShootList(cb)
   }
 })
 
@@ -29,16 +29,16 @@ import './scss/index.scss'
 
   @computed get displayList () {
     this.props.isAtBottom && this.groupIndex++
-    return this.props.list.slice(0, this.group * this.groupIndex)
+    return this.props.shootList.slice(0, this.group * this.groupIndex)
   }
 
-  goDetailPage (path, title, time) {
+  goDetailPage (path, title) {
     const id = path.split('/').reverse()[0]
-    window.open(`shoot.html?${id}&${encodeURI(title)}&${time}`)
+    window.open(`shoot.html?${id}&${encodeURI(title)}`)
   }
 
   componentWillMount () {
-    if (this.props.list.length === 0) {
+    if (this.props.shootList.length === 0) {
       NProgress.start()
       this.props.getShootList(NProgress.done)
     }
@@ -54,9 +54,8 @@ import './scss/index.scss'
               <PicBox
                 key={i}
                 title={item.title}
-                time={(new Date(item.time * 1)).toLocaleDateString()}
-                lnk={item.lnk + '?imageView2/1/w/1150/h/646/interlace/0/q/100'}
-                clickEvent={e => { this.goDetailPage(item.lnk, item.title, item.time) }}
+                lnk={item.src}
+                clickEvent={e => { this.goDetailPage(item.src, item.title) }}
               />
             ))
           }

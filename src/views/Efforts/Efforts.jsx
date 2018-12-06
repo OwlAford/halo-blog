@@ -21,7 +21,7 @@ export default () => (
     </div>
     <div className='phone'>
       <iframe
-        src='http://amaze.qiniudn.com/starry/#/main/asset?validate=0'
+        src='https://owlaford.github.io/starry/#/main/asset?validate=0'
         scrolling='no'
         frameBorder='0'
         width='100%'

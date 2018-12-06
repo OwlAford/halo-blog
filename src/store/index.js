@@ -1,4 +1,6 @@
 import HomeModel from '&/HomeModel'
+import ShootModel from '&/ShootModel'
+import DesignModel from '&/DesignModel'
 import ListModel from '&/ListModel'
 import WallModel from '&/WallModel'
 import ChatModel from '&/ChatModel'
@@ -6,8 +8,8 @@ import ChatModel from '&/ChatModel'
 const stores = {
   home: HomeModel.fromJS(false),
   article: new ListModel('article'),
-  shoot: new ListModel('photo'),
-  design: new ListModel('design'),
+  shoot: new ShootModel(),
+  design: new DesignModel(),
   wall: new WallModel(),
   chat: new ChatModel()
 }
