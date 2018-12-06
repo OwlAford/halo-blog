@@ -71,8 +71,8 @@ class Banner extends React.Component {
   genSize = wh => {
     const origin = wh
     const view = [
-      this.props.clientW,
-      this.props.clientH
+      this.props.clientW * window.devicePixelRatio,
+      this.props.clientH * window.devicePixelRatio
     ]
     const originRatio = origin[0] / origin[1]
     const viewRatio = view[0] / view[1]
@@ -122,6 +122,8 @@ class Banner extends React.Component {
       view[0],
       view[1]
     )
+
+    canvas.style.cssText = `width: 100%; height: ${size.view[1] / window.devicePixelRatio}px`
   }
 
   initBanner (first) {
@@ -130,7 +132,7 @@ class Banner extends React.Component {
     const size = this.genSize([2048, 1365])
     const thumbSize = this.genSize([320, 213])
 
-    const fullCSS = `width: 100%; height: ${size.view[1]}px`
+    const fullCSS = `width: 100%; height: ${size.view[1] / window.devicePixelRatio}px`
     $banner.style.cssText = fullCSS
 
     const drawBlur = () => {

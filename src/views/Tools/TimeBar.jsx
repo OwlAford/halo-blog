@@ -48,7 +48,7 @@ import ProgressBar from '^/ProgressBar'
     const endDate = new Date(`${curYear + 1}-01-01T00:00:00`)
 
     const monthFirstDate = new Date(`${curYear}-${intNum(curMonth)}-01T00:00:00`)
-    const monthEndDate = new Date(`${curYear}-${intNum(curMonth + 1)}-01T00:00:00`)
+    const monthEndDate = new Date(`${curMonth === 12 ? curYear + 1 : curYear}-${intNum((curMonth === 12 ? 0 : curMonth) + 1)}-01T00:00:00`)
 
     const fullYearDay = (endDate.getTime() - firstDate.getTime()) / fullDayLong
     const yearDistDay = Math.ceil((endDate.getTime() - curDate.getTime()) / fullDayLong)
