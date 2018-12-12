@@ -1,7 +1,7 @@
 @import './variable.scss';
 
 @font-face {
-  @include setIconFont(font_156150_lvf9yaeuh4ghw7b9);
+  @include setIconFont(font_156150_yi9wqdgfmop);
 }
 
 @font-face {
@@ -28,7 +28,8 @@ body {
   min-width: 1200px;
 
   &:lang(zh-CN) {
-    font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Avenir', 'Tahoma', 'Arial', 'PingFang SC', 'Lantinghei SC', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', 'Helvetica', 'sans-serif';
+    // font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   }
 
   &::-webkit-scrollbar {

@@ -41,6 +41,7 @@ import ProgressBar from '^/ProgressBar'
     const curDate = new Date()
     const curYear = curDate.getFullYear()
     const curMonth = curDate.getMonth() + 1
+    const isLastMonth = curMonth === 12
 
     const intNum = num => num < 10 ? `0${num}` : num
 
@@ -48,7 +49,7 @@ import ProgressBar from '^/ProgressBar'
     const endDate = new Date(`${curYear + 1}-01-01T00:00:00`)
 
     const monthFirstDate = new Date(`${curYear}-${intNum(curMonth)}-01T00:00:00`)
-    const monthEndDate = new Date(`${curMonth === 12 ? curYear + 1 : curYear}-${intNum((curMonth === 12 ? 0 : curMonth) + 1)}-01T00:00:00`)
+    const monthEndDate = new Date(`${isLastMonth ? curYear + 1 : curYear}-${intNum((isLastMonth ? 0 : curMonth) + 1)}-01T00:00:00`)
 
     const fullYearDay = (endDate.getTime() - firstDate.getTime()) / fullDayLong
     const yearDistDay = Math.ceil((endDate.getTime() - curDate.getTime()) / fullDayLong)
@@ -85,7 +86,7 @@ import ProgressBar from '^/ProgressBar'
         <div className='title'>
           <div className='inner'>
             <i className='iconfont'>&#xe6e8;</i>
-            <span>时间还剩多少</span>
+            <span>明日何其多</span>
             <span className='local'>{`(IP:${cip} ${cname})`}</span>
           </div>
           <div className='details'>{this.surplus}</div>

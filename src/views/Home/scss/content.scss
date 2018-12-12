@@ -332,17 +332,13 @@
         background: url(../images/play.svg) no-repeat;
         background-size: 100% auto;
         cursor: pointer;
-        opacity: .6;
-        transition: opacity .3s;
+        border: 5px solid rgba(255, 255, 255, .16);
+        border-radius: 100%;
 
         &.right {
           margin-left: 0;
           left: 920px;
           bottom: 12px;
-        }
-
-        &:hover {
-          opacity: 1;
         }
 
         &.pause {

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Terminal from './Terminal'
 import './scss/index.scss'
 
@@ -14,7 +13,7 @@ const Profile = () => (
           <p>把情调和创意，融入交互和设计</p>
         </div>
         <div className='cell'>
-          <Link to='/efforts' className='iconfont'>&#xe64c;</Link>
+          <a href='/#/efforts' target='_blank' className='iconfont'>&#xe64c;</a>
           <h2>Development</h2>
           <p>以码为笔，让所有的想象成为现实</p>
         </div>

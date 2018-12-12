@@ -1,5 +1,6 @@
 {
   "globals": {
+    "G2": true,
     "TweenLite": true,
     "Circ": true,
     "axios": true,

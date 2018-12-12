@@ -63,7 +63,7 @@ export default class ChatModel {
       getData('chatRoom/chatlist/' + curDate, val => {
         if (val) {
           if (document.hidden) {
-            document.title = `【您有新消息】HALO - 🍺及时行乐`
+            document.title = `【您有新消息】© HALO - 🍺及时行乐`
           }
           this.originChatList[curDate] = val
           let arr = []

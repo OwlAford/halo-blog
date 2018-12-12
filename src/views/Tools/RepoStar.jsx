@@ -68,7 +68,7 @@ import EmptyBox from '^/EmptyBox'
                   <tbody>
                     {
                       list.map((item, i) => (
-                        <tr className='item-row gitfont' key={i}>
+                        <tr className='item-row' key={i}>
                           <td>
                             <div className='name'>
                               <a href={item.html_url} target='_blank'>{item.full_name}</a>

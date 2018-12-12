@@ -77,6 +77,11 @@ import avatar from './images/avatar.jpg'
       'label': 'CHAT',
       'labelZh': '闲聊',
       'path': '/home/chat'
+    },
+    {
+      'label': 'TALK',
+      'labelZh': '留言',
+      'path': '/home/message'
     }
   ]
 

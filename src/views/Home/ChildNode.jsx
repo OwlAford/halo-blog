@@ -11,6 +11,7 @@ import Design from '../Design'
 import Wall from '../Wall'
 import Tools from '../Tools'
 import Chat from '../Chat'
+import Message from '../Message'
 
 @withRouter
 
@@ -65,6 +66,10 @@ import Chat from '../Chat'
             <Route
               path='/home/chat'
               component={Chat}
+            />
+            <Route
+              path='/home/message'
+              component={Message}
             />
             <Route
               component={() => <Redirect to='/home/profile' />}
