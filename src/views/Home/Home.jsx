@@ -7,9 +7,11 @@ import Banner from './Banner'
 import MusicBox from './MusicBox'
 import ChildNode from './ChildNode'
 import Toolbar from '~/layouts/Toolbar'
+import { withToast } from '^/Toast'
 import './scss/content.scss'
 
 @withRouter
+@withToast
 @observer class Home extends React.Component {
   @observable clientH = 540
   @observable clientW = 1200
@@ -34,6 +36,12 @@ import './scss/content.scss'
       } else {
         window.scrollTo(0, realHeight + 250)
       }
+    })
+  }
+
+  componentDidMount () {
+    window.addEventListener('offline', () => {
+      this.props.showMessage('网络连接失败！', 2000)
     })
   }
 
