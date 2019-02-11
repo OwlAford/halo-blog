@@ -1,7 +1,10 @@
-import Loadable from 'react-loadable'
+import React from 'react'
 import Spin from '^/Spin'
 
-export default Loadable({
-  loader: () => import(/* webpackChunkName: "message" */ './Message'),
-  loading: Spin
-})
+const Message = React.lazy(() => import(/* webpackChunkName: "message" */ './Message'))
+
+export default () => (
+  <React.Suspense fallback={<Spin />}>
+    <Message />
+  </React.Suspense>
+)

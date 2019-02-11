@@ -1,7 +1,10 @@
-import Loadable from 'react-loadable'
+import React from 'react'
 import Spin from '^/Spin'
 
-export default Loadable({
-  loader: () => import(/* webpackChunkName: "tools" */ './Tools'),
-  loading: Spin
-})
+const Tools = React.lazy(() => import(/* webpackChunkName: "tools" */ './Tools'))
+
+export default () => (
+  <React.Suspense fallback={<Spin />}>
+    <Tools />
+  </React.Suspense>
+)

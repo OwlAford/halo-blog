@@ -1,7 +1,10 @@
-import Loadable from 'react-loadable'
+import React from 'react'
 import Spin from '^/Spin'
 
-export default Loadable({
-  loader: () => import(/* webpackChunkName: "note" */ './Note'),
-  loading: Spin
-})
+const Note = React.lazy(() => import(/* webpackChunkName: "note" */ './Note'))
+
+export default () => (
+  <React.Suspense fallback={<Spin />}>
+    <Note />
+  </React.Suspense>
+)

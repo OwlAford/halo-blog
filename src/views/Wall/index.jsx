@@ -1,7 +1,10 @@
-import Loadable from 'react-loadable'
+import React from 'react'
 import Spin from '^/Spin'
 
-export default Loadable({
-  loader: () => import(/* webpackChunkName: "wall" */ './Wall'),
-  loading: Spin
-})
+const Wall = React.lazy(() => import(/* webpackChunkName: "wall" */ './Wall'))
+
+export default () => (
+  <React.Suspense fallback={<Spin />}>
+    <Wall />
+  </React.Suspense>
+)
