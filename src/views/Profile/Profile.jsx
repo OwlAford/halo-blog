@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Terminal from './Terminal'
 import './scss/index.scss'
 
@@ -13,7 +14,7 @@ const Profile = () => (
           <p>把情调和创意，融入交互和设计</p>
         </div>
         <div className='cell'>
-          <a href='/#/efforts' target='_blank' className='iconfont'>&#xe64c;</a>
+          <NavLink to='/efforts' target='_blank' className='iconfont'>&#xe64c;</NavLink>
           <h2>Development</h2>
           <p>以码为笔，让所有的想象成为现实</p>
         </div>
