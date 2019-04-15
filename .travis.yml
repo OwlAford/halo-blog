@@ -28,10 +28,10 @@ script:
 
 after_script:
   - cd ./dist
-  - git config --global user.name "owlaford"
-  - git config --global user.email "244734834@qq.com"
+  - git config --global user.name "${GT_USERNAME}"
+  - git config --global user.email "${GT_EMAIL}"
   - git init
   - git add .
-  - git commit -m "update"
-  - git remote add origin https://owlaford:${GT_PASSWORD}@gitee.com/owlaford/halo.git
+  - git commit -m "update static files"
+  - git remote add origin https://${GT_USERNAME}:${GT_PASSWORD}@gitee.com/owlaford/halo.git
   - git push -f origin master
