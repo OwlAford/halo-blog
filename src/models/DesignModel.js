@@ -6,7 +6,7 @@ export default class DesignListModel {
 
   @action
   getDesignList (cb, err) {
-    axios.get('/data/ui.json')
+    axios.get('/halo/data/ui.json')
       .then(({ data }) => {
         this.designList = shuffle(data.data || [])
         cb && cb(data.data)

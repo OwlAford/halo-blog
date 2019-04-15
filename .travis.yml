@@ -1,21 +1,38 @@
 language: node_js
+
 node_js:
   - '8'
+
 branchs:
   only:
   - master
+
 env:
   - CXX=g++-4.8
+  global:
+  - GT_REF: git@gitee.com:owlaford/halo.git
+
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+
 cache:
   directories:
     - 'node_modules'
+
 script:
   - npm run unit
   - npm run lint
   - npm run build
+
+after_script:
+  - cd ./dist
+  - git init
+  - git config user.name 'owlaford'
+  - git config user.email '244734834@qq.com'
+  - git add .
+  - git commit -m 'update'
+  - git push --force --quiet "https://${GT_TOKEN}@${GT_REF}" master:master

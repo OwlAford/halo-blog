@@ -10,12 +10,12 @@ module.exports = {
   productionSourceMap: false,
   publicPath: '/halo/',
   proxyTable: {
-    '/music': {
-      target: 'http://106.14.138.86:7000/',
+    '/halo/music': {
+      target: 'https://owlaford.gitee.io/',
       changeOrigin: true
     },
-    '/data': {
-      target: 'http://106.14.138.86:7000/',
+    '/halo/data': {
+      target: 'https://owlaford.gitee.io/',
       changeOrigin: true
     }
   },

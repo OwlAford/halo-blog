@@ -6,7 +6,7 @@ export default class ShootModel {
 
   @action
   getShootList (cb, err) {
-    axios.get('/data/1x-latest.json')
+    axios.get('/halo/data/1x-latest.json')
       .then(({ data }) => {
         this.shootList = shuffle(data.data || [])
         cb && cb(data.data)
