@@ -10,7 +10,7 @@ class Message extends React.Component {
     const gitalk = new Gitalk({
       clientID: 'aa46fa2b79c6bbb14ed7',
       clientSecret: 'a40357cebfe131ab380a7bdd2a94da5a18383275',
-      repo: 'bunny-girl',
+      repo: 'halo-blog',
       owner: 'OwlAford',
       admin: ['OwlAford'],
       id: location.pathname,

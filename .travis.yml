@@ -28,11 +28,3 @@ script:
   - npm run lint
   - npm run build
 
-after_script:
-  - cd ./dist
-  - git init
-  - git config user.name 'owlaford'
-  - git config user.email '244734834@qq.com'
-  - git add .
-  - git commit -m 'update'
-  - git push --force --quiet "https://${GT_TOKEN}@${GT_REF}" master:master
