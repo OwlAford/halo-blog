@@ -28,6 +28,8 @@ script:
 
 after_script:
   - cd ./dist
+  - git config --global user.name "owlaford"
+  - git config --global user.email "244734834@qq.com"
   - git init
   - git add .
   - git commit -m "update"
