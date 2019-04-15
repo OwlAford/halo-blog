@@ -23,7 +23,7 @@ export default class HomeModel {
   @observable girlShow = false
   @observable girlSing = false
 
-  musicLink = '/halo/music/singing.mp3'
+  musicLink = '/media/music/singing.mp3'
 
   constructor (scrollableState) {
     this.scrollable = scrollableState
@@ -139,7 +139,7 @@ export default class HomeModel {
 
   @action
   getUserInfo (cb, err) {
-    axios.get('/halo/data/userInfo.json')
+    axios.get('/media/data/userInfo.json')
       .then(({ data }) => {
         this.userInfo.author = data.author
         this.userInfo.bio = data.bio

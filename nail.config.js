@@ -10,11 +10,7 @@ module.exports = {
   productionSourceMap: false,
   publicPath: '/halo/',
   proxyTable: {
-    '/halo/music': {
-      target: 'https://owlaford.gitee.io/',
-      changeOrigin: true
-    },
-    '/halo/data': {
+    '/media': {
       target: 'https://owlaford.gitee.io/',
       changeOrigin: true
     }
