@@ -44,7 +44,7 @@
     "ua-parser-js": "^0.7.19"
   },
   "devDependencies": {
-    "@nail-cli/core": "^1.4.11",
+    "@nail-cli/core": "^1.5.0",
     "cypress": "3.2.0"
   }
 }
