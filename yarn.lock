@@ -1233,10 +1233,10 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/yargs" "^12.0.9"
 
-"@nail-cli/core@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.5.0.tgz#07dc7fb38542d963feec140592727bba6bb94bdb"
-  integrity sha512-mv4EYpErklXcx3CJPoXRKRBFKG6+63hA+D0crleHLexzkBo78e5UImjq80PtYQ1Yv8zAMkE89psHPeQLnb8tAw==
+"@nail-cli/core@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.5.1.tgz#679594949d5121dfbb46e6b840042ca921cca355"
+  integrity sha512-3kG7TxA9p4y8gwezW00gGlgQR2Z1y8LqNXa1PFzhgOJyiIEYK0cX+CbnU2167sRzAO7sinC4xy/ToJv84W99XA==
   dependencies:
     "@babel/core" "^7.4.3"
     "@babel/node" "7.2.2"
@@ -1295,7 +1295,7 @@
     html-webpack-plugin "^3.2.0"
     http-proxy-middleware "^0.19.1"
     inquirer "^6.3.1"
-    is-root "^2.0.0"
+    is-root "^2.1.0"
     jest "24.7.1"
     last-call-webpack-plugin "^3.0.0"
     less "^3.9.0"
@@ -5767,10 +5767,10 @@ is-resolvable@^1.0.0:
   resolved "https://registry.npmjs.org/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
 
-is-root@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/is-root/-/is-root-2.0.0.tgz#838d1e82318144e5a6f77819d90207645acc7019"
-  integrity sha512-F/pJIk8QD6OX5DNhRB7hWamLsUilmkDGho48KbgZ6xg/lmAZXHxzXQ91jzB3yRSw5kdQGGGc4yz8HYhTYIMWPg==
+is-root@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/is-root/-/is-root-2.1.0.tgz#809e18129cf1129644302a4f8544035d51984a9c"
+  integrity sha512-AGOriNp96vNBd3HtU+RzFEc75FfR5ymiYv8E553I71SCeXBiMsVDUtdio1OEFvrPyLIQ9tVR5RxXIFe5PUFjMg==
 
 is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
