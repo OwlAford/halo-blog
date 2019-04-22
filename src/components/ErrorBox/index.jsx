@@ -1,19 +1,19 @@
-import React from 'react'
-import './scss/index.scss'
+import React from "react";
+import "./scss/index.scss";
 
 export default class ErrorBox extends React.Component {
-  refreshPage () {
+  refreshPage() {
     if (!this.props.noReload) {
-      window.location.reload()
+      window.location.reload();
     }
   }
 
-  render () {
+  render() {
     return (
-      <div className='app-error' onClick={e => this.refreshPage()}>
-        <div className='fail-icon' />
-        <div className='title'>{this.props.children}</div>
+      <div className="app-error" onClick={e => this.refreshPage()}>
+        <div className="fail-icon" />
+        <div className="title">{this.props.children}</div>
       </div>
-    )
+    );
   }
 }

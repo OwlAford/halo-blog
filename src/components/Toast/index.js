@@ -1,2 +1,2 @@
-export { default } from './Toast'
-export { default as withToast } from './withToast'
+export { default } from "./Toast";
+export { default as withToast } from "./withToast";

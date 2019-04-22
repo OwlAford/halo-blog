@@ -1,28 +1,28 @@
-import { observable, computed, action } from 'mobx'
+import { observable, computed, action } from "mobx";
 
-import TodoModel from './TodoModel'
+import TodoModel from "./TodoModel";
 
 export default class TodoListModel {
-  @observable todos = []
+  @observable todos = [];
 
   @computed
-  get unfinishedTodoCount () {
-    return this.todos.filter(todo => !todo.finished).length
+  get unfinishedTodoCount() {
+    return this.todos.filter(todo => !todo.finished).length;
   }
 
   @action
-  addTodo (title) {
-    this.todos.push(new TodoModel(title, false))
+  addTodo(title) {
+    this.todos.push(new TodoModel(title, false));
   }
 
-  toJS () {
-    return this.todos.map(todo => todo.toJS())
+  toJS() {
+    return this.todos.map(todo => todo.toJS());
   }
 
-  static fromJS (array) {
-    const todoStore = new TodoListModel()
-    todoStore.todos = array.map(item => TodoModel.fromJS(item))
-    return todoStore
+  static fromJS(array) {
+    const todoStore = new TodoListModel();
+    todoStore.todos = array.map(item => TodoModel.fromJS(item));
+    return todoStore;
   }
 }
 

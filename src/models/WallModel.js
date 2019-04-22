@@ -1,18 +1,19 @@
-import { observable, action } from 'mobx'
-import shuffle from 'lodash/shuffle'
+import { observable, action } from "mobx";
+import shuffle from "lodash/shuffle";
 
 export default class ListModel {
-  @observable favList = []
+  @observable favList = [];
 
   @action
-  getFavList (cb, err) {
-    axios.get('/media/data/wallpaper-favorite.json')
+  getFavList(cb, err) {
+    axios
+      .get("/media/data/wallpaper-favorite.json")
       .then(({ data }) => {
-        this.favList = shuffle(data.src || [])
-        cb && cb(data)
+        this.favList = shuffle(data.src || []);
+        cb && cb(data);
       })
       .catch(er => {
-        err && err(er)
-      })
+        err && err(er);
+      });
   }
 }

@@ -1,7 +1,7 @@
-import React from 'react'
-import classNames from 'classnames'
-import { Link } from 'react-router-dom'
-import './scss/index.scss'
+import React from "react";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
+import "./scss/index.scss";
 
 export default ({ size, style, run }) => {
   const allStyle = {
@@ -9,15 +9,15 @@ export default ({ size, style, run }) => {
     height: `${size}px`,
     backgroundSize: `${size}px ${size}px`,
     ...style
-  }
+  };
   return (
     <Link
-      to='/home/profile'
+      to="/home/profile"
       className={classNames({
-        'app-logo': true,
-        'running': run
+        "app-logo": true,
+        running: run
       })}
       style={allStyle}
     />
-  )
-}
+  );
+};

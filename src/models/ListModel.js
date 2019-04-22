@@ -1,19 +1,19 @@
-import { observable, action } from 'mobx'
-import { getData2Array } from '~/constants/connect'
-import shuffle from 'lodash/shuffle'
+import { observable, action } from "mobx";
+import { getData2Array } from "~/constants/connect";
+import shuffle from "lodash/shuffle";
 
 export default class ListModel {
-  @observable list = []
+  @observable list = [];
 
-  constructor (type) {
-    this.type = type
+  constructor(type) {
+    this.type = type;
   }
 
   @action
-  getList (cb) {
+  getList(cb) {
     getData2Array(this.type, list => {
-      this.list = shuffle(list.reverse())
-      cb && cb()
-    })
+      this.list = shuffle(list.reverse());
+      cb && cb();
+    });
   }
 }

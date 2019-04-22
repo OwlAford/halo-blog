@@ -1,36 +1,40 @@
-import React from 'react'
-import { observable, action } from 'mobx'
-import { observer } from 'mobx-react'
+import React from "react";
+import { observable, action } from "mobx";
+import { observer } from "mobx-react";
 
-@observer class LazyDisplay extends React.Component {
-  @observable remove = true
+@observer
+class LazyDisplay extends React.Component {
+  @observable remove = true;
 
-  clearTimer () {
-    this.delayTimer && clearTimeout(this.delayTimer)
+  clearTimer() {
+    this.delayTimer && clearTimeout(this.delayTimer);
   }
 
   @action
-  componentWillReceiveProps (nextProps, nextState) {
-    let { enterDelay, leaveDelay, visibleKey } = this.props
-    enterDelay = enterDelay || 300
-    leaveDelay = leaveDelay || 300
+  componentWillReceiveProps(nextProps, nextState) {
+    let { enterDelay, leaveDelay, visibleKey } = this.props;
+    enterDelay = enterDelay || 300;
+    leaveDelay = leaveDelay || 300;
     if (nextProps.visibleKey === visibleKey) {
-      return
+      return;
     }
-    this.clearTimer()
-    this.delayTimer = setTimeout(() => {
-      this.remove = visibleKey
-    }, visibleKey ? leaveDelay : enterDelay)
+    this.clearTimer();
+    this.delayTimer = setTimeout(
+      () => {
+        this.remove = visibleKey;
+      },
+      visibleKey ? leaveDelay : enterDelay
+    );
   }
 
-  componentWillUnmount () {
-    this.clearTimer()
+  componentWillUnmount() {
+    this.clearTimer();
   }
 
-  render () {
-    const { children } = this.props
-    return this.remove ? null : children
+  render() {
+    const { children } = this.props;
+    return this.remove ? null : children;
   }
 }
 
-export default LazyDisplay
+export default LazyDisplay;
