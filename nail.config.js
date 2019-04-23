@@ -5,7 +5,7 @@ module.exports = {
   devServerPort: 3001,
   buildServerPort: 3002,
   productionSourceMap: false,
-  publicPath: "/halo/",
+  publicPath: "/",
   proxyTable: {
     "/media": {
       target: "https://owlaford.gitee.io/",

@@ -33,5 +33,5 @@ after_script:
   - git init
   - git add .
   - git commit -m "update static files"
-  - git remote add origin https://${GT_USERNAME}:${GT_PASSWORD}@gitee.com/${GT_USERNAME}/halo.git
+  - git remote add origin https://${GT_USERNAME}:${GT_PASSWORD}@gitee.com/${GT_USERNAME}/owlaford.git
   - git push --progress -f origin master
