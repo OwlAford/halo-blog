@@ -7,8 +7,8 @@ import "./scss/index.scss";
 class Message extends React.Component {
   componentDidMount() {
     const gitalk = new Gitalk({
-      clientID: "aa46fa2b79c6bbb14ed7",
-      clientSecret: "a40357cebfe131ab380a7bdd2a94da5a18383275",
+      clientID: "21bf9e68953515f48683",
+      clientSecret: "a4d57d9e5a40787a2d88ca328032d194ae5fcd82",
       repo: "halo-blog",
       owner: "OwlAford",
       admin: ["OwlAford"],
