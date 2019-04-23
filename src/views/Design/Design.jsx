@@ -1,6 +1,7 @@
 import React from "react";
 import { computed } from "mobx";
 import { observer, inject } from "mobx-react";
+import NProgress from "nprogress";
 import { num2even } from "~/libs/tools";
 import Spin from "^/Spin";
 import PicBox from "^/PicBox";

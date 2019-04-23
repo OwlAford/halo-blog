@@ -1,15 +1,5 @@
 {
   "globals": {
-    "G2": true,
-    "TweenLite": true,
-    "Circ": true,
-    "axios": true,
-    "wilddog": true,
-    "IScroll": true,
-    "NProgress": true,
-    "echarts": true,
-    "StackBlur": true,
-    "WaveSurfer": true,
-    "dynamics": true
+    "wilddog": true
   }
 }

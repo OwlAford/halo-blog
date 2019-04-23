@@ -1,5 +1,7 @@
 import React from "react";
 import { observable, action } from "mobx";
+import NProgress from "nprogress";
+import IScroll from "iscroll";
 import { observer, inject } from "mobx-react";
 import { formatNumner } from "~/filters";
 import { withToast } from "^/Toast";

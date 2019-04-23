@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import * as StackBlur from "stackblur-canvas";
 import BubblyButton from "^/BubblyButton";
 import "./scss/playList.scss";
 

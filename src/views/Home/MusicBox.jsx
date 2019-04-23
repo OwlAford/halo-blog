@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { observable, action } from "mobx";
 import { observer, inject } from "mobx-react";
 import classNames from "classnames";
+import WaveSurfer from "wavesurfer.js";
 import Spin from "^/Spin";
 import Logo from "~/layouts/Logo";
 import PlayList from "./PlayList";

@@ -4,7 +4,7 @@ import classNames from "classnames";
 import "./scss/banner.scss";
 import throttle from "lodash/throttle";
 import debounce from "lodash/debounce";
-// import StackBlur from 'stackblur-canvas'
+import * as StackBlur from "stackblur-canvas";
 import { initImage } from "~/libs/tools";
 import imageThumb from "./images/bg-city-thumb.jpg";
 import originImage from "./images/bg-city.jpg";

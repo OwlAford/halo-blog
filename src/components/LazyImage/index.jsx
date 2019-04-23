@@ -1,4 +1,5 @@
 import React from "react";
+import StackBlur from "stackblur-canvas";
 import "./scss/index.scss";
 
 export default class LazyImage extends React.Component {

@@ -1,3 +1,6 @@
+import { TweenLite, EasePack } from "gsap";
+import { Circ } from "gsap/EasePack";
+
 let width;
 let height;
 let ctx;

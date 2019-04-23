@@ -1,5 +1,6 @@
 import React from "react";
 import { computed } from "mobx";
+import NProgress from "nprogress";
 import { observer, inject } from "mobx-react";
 import { timeAgo, limitString } from "~/filters";
 import Spin from "^/Spin";

@@ -7,6 +7,9 @@ import App from "@/App";
 import store from "~/store";
 import { routeRootPath } from "~/constants/config";
 
+import "nprogress/nprogress.css";
+import "normalize.css";
+
 render(
   <Provider {...store}>
     <Router basename={routeRootPath}>

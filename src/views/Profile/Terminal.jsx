@@ -2,7 +2,7 @@ import React from "react";
 import { observable, action } from "mobx";
 import { observer, inject } from "mobx-react";
 import classNames from "classnames";
-// import dynamics from 'dynamics.js'
+import dynamics from "dynamics.js";
 import { waiter } from "~/libs/tools";
 import Payload from "./Payload";
 import "./scss/terminal.scss";
