@@ -34,7 +34,7 @@
     "mobx": "5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.1.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "qrcode": "1.3.3",
@@ -48,7 +48,7 @@
     "wavesurfer.js": "^2.2.1"
   },
   "devDependencies": {
-    "@nail-cli/core": "^1.6.1",
+    "@nail-cli/core": "^1.6.3",
     "cypress": "3.2.0"
   }
 }
