@@ -9,7 +9,8 @@ import Spin from "^/Spin";
 import Logo from "~/layouts/Logo";
 import PlayList from "./PlayList";
 import { waiter } from "~/libs/tools";
-import initTween from "~/libs/tween";
+// import initTween from "~/libs/tween";
+import "particles.js";
 import avatar from "./images/avatar.jpg";
 
 @withRouter
@@ -246,7 +247,8 @@ class MusicBox extends React.Component {
       await waiter(1000);
       this.avatarState = "up";
       await waiter(300);
-      initTween(this.$tween, this.props.clientW, this.props.clientH);
+      window.particlesJS.load("particles-mask", "particles.json");
+      // initTween(this.$tween, this.props.clientW, this.props.clientH);
       await waiter(1000);
       this.props.scrollableHandle(true);
     });
@@ -303,7 +305,7 @@ class MusicBox extends React.Component {
       : `${realHeight}px`;
 
     return [
-      <div className="tween-wrap" key="tween">
+      <div className="tween-wrap" key="tween" id="particles-mask">
         <canvas
           className="tween"
           ref={node => {

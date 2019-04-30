@@ -32,9 +32,9 @@ export default class HomeModel {
     document.addEventListener("visibilitychange", () => {
       const isHidden = document.hidden;
       if (isHidden) {
-        document.title = `© HALO - 🍺及时行乐`;
+        document.title = `HALO - 🌈及时行乐`;
       } else {
-        document.title = "© HALO - Carpe Diem";
+        document.title = "HALO - Carpe Diem";
       }
     });
 

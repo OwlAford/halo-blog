@@ -26,6 +26,7 @@ body {
   background-color: $bg;
   user-select: none;
   min-width: 1200px;
+  background-color: #000;
 
   &:lang(zh-CN) {
     font-family: 'Avenir', 'Tahoma', 'Arial', 'PingFang SC', 'Lantinghei SC', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', 'Helvetica', 'sans-serif';
@@ -33,15 +34,21 @@ body {
   }
 
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
+    height: 8px;
+    background: #202123;
+    border-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background-color: rgba(0, 0, 0, 0.64);
+    border-radius: 4px;
   }
 
-  &::-webkit-scrollbar-track-piece {
-    background-color: #fff;
+  &::-webkit-scrollbar-corner,
+  &::-webkit-resizer {
+    background: #202123;
   }
 }
 
@@ -51,7 +58,7 @@ min-height: 400px;
 }
 
 .gitfont {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .app-skew-shadow {
