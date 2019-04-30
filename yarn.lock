@@ -1220,10 +1220,10 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/yargs" "^12.0.9"
 
-"@nail-cli/core@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.6.3.tgz#664b1740928b704beccf6ea01f6823d058b28a00"
-  integrity sha512-VmVjfmwwaxddNulqCvMm28A0lbtIH/RnbvtKHcgYy+ru2x9vGDJqccEF+BPavGO5pXkqgRoymrXXCbvZlU4H0Q==
+"@nail-cli/core@^1.6.4":
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/@nail-cli/core/-/core-1.6.4.tgz#9e6d583cfc7131f861625c21b709fc1ec9f91bd4"
+  integrity sha512-rAadKMpsBIlH8JBCVZx9yi8s+LXIHg/uwG3QdZNtvuU0keNpGjyoEHeIV78d32dIWop1ZspMC/MbGGJvX6kbNg==
   dependencies:
     "@babel/core" "^7.4.4"
     "@babel/node" "7.2.2"
@@ -1288,7 +1288,7 @@
     jest "24.7.1"
     last-call-webpack-plugin "^3.0.0"
     less "^3.9.0"
-    less-loader "^4.1.0"
+    less-loader "^5.0.0"
     lodash.camelcase "^4.3.0"
     mini-css-extract-plugin "^0.6.0"
     node-sass "^4.12.0"
@@ -6589,14 +6589,14 @@ left-pad@^1.3.0:
   resolved "https://registry.npmjs.org/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
   integrity sha512-XI5MPzVNApjAyhQzphX8BkmKsKUxD4LdyK24iZeQGinBN9yTQT3bFlCBy/aVx2HrNcqQGsdot8ghrjyrvMCoEA==
 
-less-loader@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/less-loader/-/less-loader-4.1.0.tgz#2c1352c5b09a4f84101490274fd51674de41363e"
-  integrity sha512-KNTsgCE9tMOM70+ddxp9yyt9iHqgmSs0yTZc5XH5Wo+g80RWRIYNqE58QJKm/yMud5wZEvz50ugRDuzVIkyahg==
+less-loader@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/less-loader/-/less-loader-5.0.0.tgz#498dde3a6c6c4f887458ee9ed3f086a12ad1b466"
+  integrity sha512-bquCU89mO/yWLaUq0Clk7qCsKhsF/TZpJUzETRvJa9KSVEL9SO3ovCvdEHISBhrC81OwC8QSVX7E0bzElZj9cg==
   dependencies:
     clone "^2.1.1"
     loader-utils "^1.1.0"
-    pify "^3.0.0"
+    pify "^4.0.1"
 
 less@^3.9.0:
   version "3.9.0"
