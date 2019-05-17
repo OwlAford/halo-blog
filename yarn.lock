@@ -33,10 +33,10 @@
   dependencies:
     "@antv/util" "~1.3.1"
 
-"@antv/g2@3.5.3":
-  version "3.5.3"
-  resolved "https://registry.npmjs.org/@antv/g2/-/g2-3.5.3.tgz#8451719aac860690b67a409d5fb7b06802c4aca6"
-  integrity sha512-JXaceNrJ186auehjBLatl0tz/mYLa2fhQ/SK5/aC4nTcvCdSDIJgMXPmAaKbsqz7y9G0iE9FDRxE2UMkYIzI2A==
+"@antv/g2@3.5.4":
+  version "3.5.4"
+  resolved "https://registry.npmjs.org/@antv/g2/-/g2-3.5.4.tgz#7b80c2e56b2c326e8e968212e6deb534d19e6efa"
+  integrity sha512-sDCbi8FnD4lppyIBM334CdbDeVSIZSm+vMM3e0qRDWXzlG74CZDkAEG13Jjb2hQJXAK6fKKUfszUkC8OZDxs1Q==
   dependencies:
     "@antv/adjust" "~0.1.0"
     "@antv/attr" "~0.1.2"
