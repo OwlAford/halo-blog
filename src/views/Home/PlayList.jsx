@@ -1,8 +1,8 @@
-import React from "react";
-import classNames from "classnames";
-import * as StackBlur from "stackblur-canvas";
-import BubblyButton from "^/BubblyButton";
-import "./scss/playList.scss";
+import React from 'react';
+import classNames from 'classnames';
+import * as StackBlur from 'stackblur-canvas';
+import BubblyButton from '^/BubblyButton';
+import './scss/playList.scss';
 
 export default class PlayList extends React.Component {
   $items = [];
@@ -12,16 +12,16 @@ export default class PlayList extends React.Component {
   mouseoverHandle(i, can) {
     if (can) {
       const $item = this.$items[i];
-      $item.classList.add("in-right");
-      $item.classList.remove("out-right");
+      $item.classList.add('in-right');
+      $item.classList.remove('out-right');
     }
   }
 
   mouseoutHandle(i, can) {
     if (can) {
       const $item = this.$items[i];
-      $item.classList.add("out-right");
-      $item.classList.remove("in-right");
+      $item.classList.add('out-right');
+      $item.classList.remove('in-right');
     }
   }
 
@@ -38,7 +38,7 @@ export default class PlayList extends React.Component {
   loadHandle(e, i) {
     const $img = e.target;
     const $cav = this.$canvas[i];
-    const ctx = $cav.getContext("2d");
+    const ctx = $cav.getContext('2d');
     ctx.drawImage($img, 0, 0, 600, 600, 0, 0, 160, 160);
     StackBlur.canvasRGB($cav, 0, 0, 160, 160, 15);
   }
@@ -53,8 +53,8 @@ export default class PlayList extends React.Component {
               <div
                 className={classNames({
                   item: true,
-                  "in-right": index === i,
-                  "out-right": index !== i
+                  'in-right': index === i,
+                  'out-right': index !== i,
                 })}
                 ref={node => {
                   this.$items[i] = node;

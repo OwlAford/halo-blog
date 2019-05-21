@@ -1,41 +1,41 @@
-import React from "react";
-import "./scss/footer.scss";
-import MultiWave from "~/libs/multiWave";
+import React from 'react';
+import './scss/footer.scss';
+import MultiWave from '~/libs/multiWave';
 
 export default class Footer extends React.Component {
   componentDidMount() {
     this.multiWave = new MultiWave(this.$wave, [
       {
-        waveWidth: "20%",
-        offsetX: "0%",
-        waveHeight: "14%",
-        waveColor: "rgba(255, 255, 255, 0.08)",
-        startFromTop: "80%",
-        endFromTop: "80%",
-        moveYStep: "0.6%",
-        moveXStep: "0.4%",
-        moveXDirection: "right"
+        waveWidth: '20%',
+        offsetX: '0%',
+        waveHeight: '14%',
+        waveColor: 'rgba(255, 255, 255, 0.08)',
+        startFromTop: '80%',
+        endFromTop: '80%',
+        moveYStep: '0.6%',
+        moveXStep: '0.4%',
+        moveXDirection: 'right',
       },
       {
-        waveWidth: "40%",
-        offsetX: "30%",
-        waveHeight: "14%",
-        waveColor: "rgba(255, 255, 255, 0.09)",
-        startFromTop: "80%",
-        endFromTop: "80%",
-        moveYStep: "0.6%",
-        moveXStep: "0.3%"
+        waveWidth: '40%',
+        offsetX: '30%',
+        waveHeight: '14%',
+        waveColor: 'rgba(255, 255, 255, 0.09)',
+        startFromTop: '80%',
+        endFromTop: '80%',
+        moveYStep: '0.6%',
+        moveXStep: '0.3%',
       },
       {
-        waveWidth: "40%",
-        offsetX: "80%",
-        waveHeight: "14%",
-        waveColor: "rgba(255, 255, 255, 0.07)",
-        startFromTop: "80%",
-        endFromTop: "80%",
-        moveYStep: "0.5%",
-        moveXStep: "1%"
-      }
+        waveWidth: '40%',
+        offsetX: '80%',
+        waveHeight: '14%',
+        waveColor: 'rgba(255, 255, 255, 0.07)',
+        startFromTop: '80%',
+        endFromTop: '80%',
+        moveYStep: '0.5%',
+        moveXStep: '1%',
+      },
     ]);
   }
 
@@ -49,8 +49,8 @@ export default class Footer extends React.Component {
               this.$wave = node;
             }}
             style={{
-              height: "200px",
-              width: `${window.innerWidth}px`
+              height: '200px',
+              width: `${window.innerWidth}px`,
             }}
           />
           <div className="text">

@@ -1,8 +1,8 @@
-import React from "react";
-import Online from "./Online";
-import ChatList from "./ChatList";
-import InputBox from "./InputBox";
-import "./scss/index.scss";
+import React from 'react';
+import Online from './Online';
+import ChatList from './ChatList';
+import InputBox from './InputBox';
+import './scss/index.scss';
 
 const Chat = () => (
   <div className="home-chat">

@@ -1,14 +1,14 @@
-import React from "react";
-import "./scss/index.scss";
+import React from 'react';
+import './scss/index.scss';
 
 export default class BubblyButton extends React.Component {
   animateButton(e) {
     const { clickEvent } = this.props;
     const $elClass = e.target.classList;
-    $elClass.remove("animate");
-    $elClass.add("animate");
+    $elClass.remove('animate');
+    $elClass.add('animate');
     this.clickTimer = setTimeout(() => {
-      $elClass.remove("animate");
+      $elClass.remove('animate');
       clickEvent && clickEvent();
       clearTimeout(this.clickTimer);
     }, 800);

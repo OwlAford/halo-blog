@@ -1,22 +1,22 @@
-import React from "react";
-import { withRouter } from "react-router";
-import { NavLink } from "react-router-dom";
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import WaveSurfer from "wavesurfer.js";
-import Spin from "^/Spin";
-import Logo from "~/layouts/Logo";
-import PlayList from "./PlayList";
-import { waiter } from "~/libs/tools";
+import React from 'react';
+import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import WaveSurfer from 'wavesurfer.js';
+import Spin from '^/Spin';
+import Logo from '~/layouts/Logo';
+import PlayList from './PlayList';
+import { waiter } from '~/libs/tools';
 // import initTween from "~/libs/tween";
-import "particles.js";
-import avatar from "./images/avatar.jpg";
+import 'particles.js';
+import avatar from './images/avatar.jpg';
 
 @withRouter
 @inject(stores => {
   const {
-    home: { scrollable, readMode, is2rdScreen, userInfo, girlShow }
+    home: { scrollable, readMode, is2rdScreen, userInfo, girlShow },
   } = stores;
   return {
     scrollable,
@@ -28,64 +28,64 @@ import avatar from "./images/avatar.jpg";
     bannerDarkHandle: state => stores.home.bannerDarkHandle(state),
     scrollableHandle: state => stores.home.scrollableHandle(state),
     readModeHandle: state => stores.home.readModeHandle(state),
-    getUserInfo: cb => stores.home.getUserInfo(cb)
+    getUserInfo: cb => stores.home.getUserInfo(cb),
   };
 })
 @observer
 class MusicBox extends React.Component {
-  @observable cricleState = "hide";
-  @observable avatarState = "hide";
+  @observable cricleState = 'hide';
+  @observable avatarState = 'hide';
   @observable musicReady = false;
   @observable bannerDarkState = false;
   @observable isPlaying = false;
   @observable currentIndex = 0;
   @observable currentMusic = {
-    name: "",
-    file: "",
-    cover: ""
+    name: '',
+    file: '',
+    cover: '',
   };
 
   subMenu = [
     {
-      label: "HOME",
-      labelZh: "首页",
-      path: "/home/profile"
+      label: 'HOME',
+      labelZh: '首页',
+      path: '/home/profile',
     },
     {
-      label: "NOTE",
-      labelZh: "笔记",
-      path: "/home/note"
+      label: 'NOTE',
+      labelZh: '笔记',
+      path: '/home/note',
     },
     {
-      label: "DESIGN",
-      labelZh: "设计",
-      path: "/home/design"
+      label: 'DESIGN',
+      labelZh: '设计',
+      path: '/home/design',
     },
     {
-      label: "SHOOT",
-      labelZh: "摄影",
-      path: "/home/shoot"
+      label: 'SHOOT',
+      labelZh: '摄影',
+      path: '/home/shoot',
     },
     {
-      label: "WALL",
-      labelZh: "壁纸",
-      path: "/home/wall"
+      label: 'WALL',
+      labelZh: '壁纸',
+      path: '/home/wall',
     },
     {
-      label: "TOOLS",
-      labelZh: "工具",
-      path: "/home/tools"
+      label: 'TOOLS',
+      labelZh: '工具',
+      path: '/home/tools',
     },
     {
-      label: "CHAT",
-      labelZh: "闲聊",
-      path: "/home/chat"
+      label: 'CHAT',
+      labelZh: '闲聊',
+      path: '/home/chat',
     },
     {
-      label: "TALK",
-      labelZh: "留言",
-      path: "/home/message"
-    }
+      label: 'TALK',
+      labelZh: '留言',
+      path: '/home/message',
+    },
   ];
 
   constructor(props) {
@@ -154,7 +154,7 @@ class MusicBox extends React.Component {
     this.volChilds = this.$scroller.childNodes;
     this.setPosition(currY);
     this.setVolChildsFocus(vol);
-    this.$banner.addEventListener("mouseup", e => {
+    this.$banner.addEventListener('mouseup', e => {
       this.mouseupHandle();
     });
   }
@@ -207,16 +207,16 @@ class MusicBox extends React.Component {
     wavesurfer.empty();
     wavesurfer.load(this.currentMusic.file);
 
-    wavesurfer.on("loading", e => {
+    wavesurfer.on('loading', e => {
       this.setLoadingProgress(e);
     });
 
-    wavesurfer.on("ready", () => {
+    wavesurfer.on('ready', () => {
       this.musicReady = true;
       this.initVolumeScroller(75);
     });
 
-    wavesurfer.on("finish", () => {
+    wavesurfer.on('finish', () => {
       this.isPlaying = false;
     });
 
@@ -226,11 +226,11 @@ class MusicBox extends React.Component {
   @action
   async componentDidMount() {
     this.wavesurfer = WaveSurfer.create({
-      container: "#music",
-      waveColor: "rgba(255, 255, 255, 0.2)",
-      progressColor: "rgba(255, 255, 255, 0.8)",
+      container: '#music',
+      waveColor: 'rgba(255, 255, 255, 0.2)',
+      progressColor: 'rgba(255, 255, 255, 0.8)',
       height: 64,
-      backend: "MediaElement"
+      backend: 'MediaElement',
     });
     this.props.getUserInfo(async () => {
       this.initMusicPlayer(0);
@@ -238,16 +238,16 @@ class MusicBox extends React.Component {
       this.$menu.style.width = `${this.props.clientW}px`;
 
       await waiter(1500);
-      this.cricleState = "run";
+      this.cricleState = 'run';
       await waiter(1000);
-      this.cricleState = "hide";
-      this.avatarState = "run";
+      this.cricleState = 'hide';
+      this.avatarState = 'run';
       this.bannerDarkState = true;
       this.props.bannerDarkHandle(true);
       await waiter(1000);
-      this.avatarState = "up";
+      this.avatarState = 'up';
       await waiter(300);
-      window.particlesJS.load("particles-mask", "particles.json");
+      window.particlesJS.load('particles-mask', 'particles.json');
       // initTween(this.$tween, this.props.clientW, this.props.clientH);
       await waiter(1000);
       this.props.scrollableHandle(true);
@@ -266,12 +266,12 @@ class MusicBox extends React.Component {
       clientW,
       scrollable,
       is2rdScreen,
-      girlShow
+      girlShow,
     } = this.props;
     const { author, bio, playlist } = userInfo;
     const middStyle = {
       top: `${clientH * 0.4}px`,
-      left: `${clientW * 0.5}px`
+      left: `${clientW * 0.5}px`,
     };
     const musicBox = {
       play: this.isPlaying,
@@ -279,7 +279,7 @@ class MusicBox extends React.Component {
       index: this.currentIndex,
       list: playlist,
       changeMode: this.changeReadMode,
-      musicHandle: this.musicHandle
+      musicHandle: this.musicHandle,
     };
 
     const Menu = ({ defaultClass, isZh }) =>
@@ -295,11 +295,11 @@ class MusicBox extends React.Component {
         </NavLink>
       ));
 
-    const couldPlay = this.avatarState === "up" && this.musicReady;
-    const waitPlay = this.avatarState === "up" && !this.musicReady;
+    const couldPlay = this.avatarState === 'up' && this.musicReady;
+    const waitPlay = this.avatarState === 'up' && !this.musicReady;
     const realHeight = clientH > 500 ? clientH : 500;
     const boxHeight = this.props.readMode
-      ? "0"
+      ? '0'
       : scrollable
       ? `${realHeight + 315}px`
       : `${realHeight}px`;
@@ -318,7 +318,7 @@ class MusicBox extends React.Component {
         id="musciBox"
         className="musciBox"
         style={{
-          height: boxHeight
+          height: boxHeight,
         }}
       >
         <div
@@ -333,8 +333,8 @@ class MusicBox extends React.Component {
             key="app-logo"
             run={this.bannerDarkState}
             style={{
-              left: "30px",
-              top: "30px"
+              left: '30px',
+              top: '30px',
             }}
           />
           <div key="app-brand" className="app-brand halofont">
@@ -343,8 +343,8 @@ class MusicBox extends React.Component {
           <div
             className={classNames({
               circleLoop: true,
-              hide: this.cricleState === "hide",
-              running: this.cricleState === "run"
+              hide: this.cricleState === 'hide',
+              running: this.cricleState === 'run',
             })}
             style={middStyle}
           />
@@ -352,23 +352,23 @@ class MusicBox extends React.Component {
             style={middStyle}
             className={classNames({
               avatar: true,
-              hide: this.avatarState === "hide",
-              upper: this.avatarState === "up",
-              running: this.avatarState === "run"
+              hide: this.avatarState === 'hide',
+              upper: this.avatarState === 'up',
+              running: this.avatarState === 'run',
             })}
           >
             <div className="wrap">
               <div
                 className={classNames({
                   halo: true,
-                  show: this.avatarState === "up",
-                  playing: this.isPlaying
+                  show: this.avatarState === 'up',
+                  playing: this.isPlaying,
                 })}
               />
               <div
                 className={classNames({
                   imgr: true,
-                  fire: this.avatarState === "run"
+                  fire: this.avatarState === 'run',
                 })}
               >
                 <img src={avatar} alt="avatar" width="120" height="120" />
@@ -376,7 +376,7 @@ class MusicBox extends React.Component {
               <div
                 className={classNames({
                   album: true,
-                  playing: this.isPlaying
+                  playing: this.isPlaying,
                 })}
               >
                 <img
@@ -390,7 +390,7 @@ class MusicBox extends React.Component {
             <div
               className={classNames({
                 textNode: true,
-                show: this.avatarState === "up"
+                show: this.avatarState === 'up',
               })}
             >
               <div className="userName halofont">
@@ -402,7 +402,7 @@ class MusicBox extends React.Component {
           <div
             className={classNames({
               menu: true,
-              show: this.avatarState === "up"
+              show: this.avatarState === 'up',
             })}
             ref={node => {
               this.$menu = node;
@@ -414,7 +414,7 @@ class MusicBox extends React.Component {
             className={classNames({
               iconfont: true,
               arrowDown: true,
-              show: scrollable
+              show: scrollable,
             })}
           >
             &#xe61c;
@@ -422,14 +422,14 @@ class MusicBox extends React.Component {
           <div
             id="music"
             className={classNames({
-              show: couldPlay
+              show: couldPlay,
             })}
           >
             <div
               className={classNames({
                 musicControl: true,
                 pause: this.isPlaying,
-                right: clientH < 620
+                right: clientH < 620,
               })}
               onClick={e => this.musicHandle()}
             />
@@ -456,7 +456,7 @@ class MusicBox extends React.Component {
             className={classNames({
               calibration: true,
               upper: clientH < 620,
-              show: couldPlay
+              show: couldPlay,
             })}
             onMouseDown={e => this.mousedownHandle(e)}
             onMouseMove={e => this.mousemoveHandle(e)}
@@ -469,7 +469,7 @@ class MusicBox extends React.Component {
             className={classNames({
               volume: true,
               upper: clientH < 620,
-              show: couldPlay
+              show: couldPlay,
             })}
             onMouseDown={e => this.mousedownHandle(e)}
             onMouseMove={e => this.mousemoveHandle(e)}
@@ -484,7 +484,7 @@ class MusicBox extends React.Component {
                 if (num !== 0 && num % 5) {
                   return null;
                 }
-                num > 9 ? (num = String(num)) : (num = "0" + num);
+                num > 9 ? (num = String(num)) : (num = '0' + num);
                 return (
                   <div className="num" key={num}>
                     {num}
@@ -502,7 +502,7 @@ class MusicBox extends React.Component {
           readModeMenu: true,
           alpha: is2rdScreen,
           hasHeight: this.props.readMode,
-          show: this.props.readMode || is2rdScreen
+          show: this.props.readMode || is2rdScreen,
         })}
       >
         <div className="inner">
@@ -511,8 +511,8 @@ class MusicBox extends React.Component {
               size={36}
               run={this.bannerDarkState}
               style={{
-                left: "0",
-                top: "8px"
+                left: '0',
+                top: '8px',
               }}
             />
             <Menu defaultClass="item" isZh />
@@ -529,7 +529,7 @@ class MusicBox extends React.Component {
               <i
                 className={classNames({
                   girl: true,
-                  active: girlShow
+                  active: girlShow,
                 })}
                 onClick={e => {
                   this.props.girlVisibleHandle(!girlShow);
@@ -538,7 +538,7 @@ class MusicBox extends React.Component {
             )}
           </div>
         </div>
-      </div>
+      </div>,
     ];
   }
 }

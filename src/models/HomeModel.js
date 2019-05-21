@@ -1,10 +1,10 @@
-import { observable, action } from "mobx";
-import axios from "axios";
-import shuffle from "lodash/shuffle";
+import { observable, action } from 'mobx';
+import axios from 'axios';
+import shuffle from 'lodash/shuffle';
 
 export default class HomeModel {
-  @observable ipCity = "";
-  @observable updateTime = "";
+  @observable ipCity = '';
+  @observable updateTime = '';
   @observable weatherChart = [];
   @observable weatherDetails = [];
   @observable is2rdScreen = false;
@@ -15,35 +15,35 @@ export default class HomeModel {
   @observable scrollable = false;
   @observable starredDataList = [];
   @observable userInfo = {
-    author: "",
-    bio: "",
-    playlist: []
+    author: '',
+    bio: '',
+    playlist: [],
   };
   @observable hobby = {};
   @observable starredGotten = false;
   @observable girlShow = false;
   @observable girlSing = false;
 
-  musicLink = "/media/music/singing.mp3";
+  musicLink = '/media/music/singing.mp3';
 
   constructor(scrollableState) {
     this.scrollable = scrollableState;
     this.initMusicAudio();
-    document.addEventListener("visibilitychange", () => {
+    document.addEventListener('visibilitychange', () => {
       const isHidden = document.hidden;
       if (isHidden) {
         document.title = `HALO - 🌈及时行乐`;
       } else {
-        document.title = "HALO - Carpe Diem";
+        document.title = 'HALO - Carpe Diem';
       }
     });
 
     axios
-      .get("https://www.tianqiapi.com/api/", {
+      .get('https://www.tianqiapi.com/api/', {
         params: {
-          version: "v1",
-          ip: window.returnCitySN.cip
-        }
+          version: 'v1',
+          ip: window.returnCitySN.cip,
+        },
       })
       .then(({ data }) => {
         let list = [];
@@ -54,20 +54,20 @@ export default class HomeModel {
         data.data.forEach(itm => {
           list.push({
             week: itm.week,
-            type: "最高气温",
-            temperature: parseInt(itm.tem1)
+            type: '最高气温',
+            temperature: parseInt(itm.tem1),
           });
           list.push({
             week: itm.week,
-            type: "最低气温",
-            temperature: parseInt(itm.tem2)
+            type: '最低气温',
+            temperature: parseInt(itm.tem2),
           });
           details.push({
             date: itm.date,
             wea: itm.wea,
             air: itm.air_level,
-            wind: `${itm.win.join("-")} ${itm.win_speed}`,
-            sun: itm.index[0]["level"]
+            wind: `${itm.win.join('-')} ${itm.win_speed}`,
+            sun: itm.index[0]['level'],
           });
         });
         this.weatherDetails = details;
@@ -76,13 +76,13 @@ export default class HomeModel {
   }
 
   initMusicAudio() {
-    const audio = (this.audio = document.createElement("audio"));
+    const audio = (this.audio = document.createElement('audio'));
     audio.src = this.musicLink;
-    audio.preload = "auto";
-    audio.style.display = "none";
+    audio.preload = 'auto';
+    audio.style.display = 'none';
     document.body.appendChild(audio);
     audio.addEventListener(
-      "ended",
+      'ended',
       e => {
         this.girlSingHandle(false);
       },
@@ -134,7 +134,7 @@ export default class HomeModel {
   @action
   getStarredDataList(cb, err) {
     axios
-      .get("https://api.github.com/users/OwlAford/starred")
+      .get('https://api.github.com/users/OwlAford/starred')
       .then(({ data }) => {
         this.starredGotten = true;
         this.starredDataList = shuffle(data);
@@ -148,7 +148,7 @@ export default class HomeModel {
   @action
   getUserInfo(cb, err) {
     axios
-      .get("/media/data/userInfo.json")
+      .get('/media/data/userInfo.json')
       .then(({ data }) => {
         this.userInfo.author = data.author;
         this.userInfo.bio = data.bio;

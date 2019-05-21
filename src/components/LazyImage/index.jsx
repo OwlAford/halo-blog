@@ -1,21 +1,21 @@
-import React from "react";
-import StackBlur from "stackblur-canvas";
-import "./scss/index.scss";
+import React from 'react';
+import StackBlur from 'stackblur-canvas';
+import './scss/index.scss';
 
 export default class LazyImage extends React.Component {
   img2base64(img, cb) {
     const tmpImg = new Image();
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     const src = img.src;
 
-    tmpImg.crossOrigin = "Anonymous";
+    tmpImg.crossOrigin = 'Anonymous';
 
     tmpImg.onload = function() {
       canvas.width = tmpImg.width;
       canvas.height = tmpImg.height;
       ctx.drawImage(tmpImg, 0, 0);
-      img.src = canvas.toDataURL("image/png");
+      img.src = canvas.toDataURL('image/png');
       img.onload = () => {
         cb && cb(img);
       };
@@ -23,7 +23,7 @@ export default class LazyImage extends React.Component {
     tmpImg.src = src;
     if (tmpImg.complete || tmpImg.complete === undefined) {
       tmpImg.src =
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
       tmpImg.src = src;
     }
   }
@@ -34,16 +34,16 @@ export default class LazyImage extends React.Component {
   }
 
   originLoaded() {
-    this.$canvas.classList.add("hide");
+    this.$canvas.classList.add('hide');
   }
 
   componentDidMount() {
     this.img2base64(this.$thumb, img => {
-      const wHeight = this.getStyle(this.$wrap, "height");
-      const wWidth = this.getStyle(this.$wrap, "width");
+      const wHeight = this.getStyle(this.$wrap, 'height');
+      const wWidth = this.getStyle(this.$wrap, 'width');
       const nWidth = img.naturalWidth;
       const nHeight = img.naturalHeight;
-      const ctx = this.$canvas.getContext("2d");
+      const ctx = this.$canvas.getContext('2d');
       this.$canvas.width = wWidth;
       this.$canvas.height = wHeight;
       ctx.drawImage(img, 0, 0, nWidth, nHeight, 0, 0, wWidth, wHeight);
@@ -62,7 +62,7 @@ export default class LazyImage extends React.Component {
       >
         <img
           src={originImage}
-          alt={"origin-" + title}
+          alt={'origin-' + title}
           className="origin"
           ref={node => {
             this.$origin = node;
@@ -73,7 +73,7 @@ export default class LazyImage extends React.Component {
         />
         <img
           src={thumbImage}
-          alt={"thumb" + title}
+          alt={'thumb' + title}
           className="thumb"
           ref={node => {
             this.$thumb = node;

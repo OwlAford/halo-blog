@@ -22,8 +22,11 @@ cache:
     - 'node_modules'
 
 script:
-  - npm run unit
   - npm run lint
+  - npm run unit
+  - npm run e2e
+  - npm run serve
+  - npm run serve -p
   - npm run build
 
 after_script:

@@ -1,7 +1,7 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import ErrorBox from "./ErrorBox";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import ErrorBox from './ErrorBox';
 
 export function withErrorHandler(Component) {
   @observer

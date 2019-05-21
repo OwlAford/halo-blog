@@ -1,41 +1,41 @@
-import React from "react";
-import { withRouter } from "react-router";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import Footer from "./Footer";
-import Profile from "../Profile";
-import Note from "../Note";
-import Shoot from "../Shoot";
-import Design from "../Design";
-import Wall from "../Wall";
-import Tools from "../Tools";
-import Chat from "../Chat";
-import Message from "../Message";
+import React from 'react';
+import { withRouter } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import Footer from './Footer';
+import Profile from '../Profile';
+import Note from '../Note';
+import Shoot from '../Shoot';
+import Design from '../Design';
+import Wall from '../Wall';
+import Tools from '../Tools';
+import Chat from '../Chat';
+import Message from '../Message';
 
 @withRouter
 @inject(stores => {
   const {
-    home: { scrollable }
+    home: { scrollable },
   } = stores;
   return {
-    scrollable
+    scrollable,
   };
 })
 @observer
 class ChildNode extends React.Component {
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.initScreen);
+    window.removeEventListener('scroll', this.initScreen);
   }
 
   render() {
     return (
       <div
-        className={classNames("content-wrap", {
-          scrollable: this.props.scrollable
+        className={classNames('content-wrap', {
+          scrollable: this.props.scrollable,
         })}
         style={{
-          minHeight: `${this.props.clientH}px`
+          minHeight: `${this.props.clientH}px`,
         }}
       >
         <div className="content-main" key="content-main">

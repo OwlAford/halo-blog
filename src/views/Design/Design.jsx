@@ -1,22 +1,22 @@
-import React from "react";
-import { computed } from "mobx";
-import { observer, inject } from "mobx-react";
-import NProgress from "nprogress";
-import { num2even } from "~/libs/tools";
-import Spin from "^/Spin";
-import PicBox from "^/PicBox";
-import "./scss/index.scss";
+import React from 'react';
+import { computed } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import NProgress from 'nprogress';
+import { num2even } from '~/libs/tools';
+import Spin from '^/Spin';
+import PicBox from '^/PicBox';
+import './scss/index.scss';
 
 @inject(stores => {
   const {
     design: { designList },
-    home: { isAtBottom }
+    home: { isAtBottom },
   } = stores;
 
   return {
     isAtBottom,
     designList,
-    getDesignList: cb => stores.design.getDesignList(cb)
+    getDesignList: cb => stores.design.getDesignList(cb),
   };
 })
 @observer

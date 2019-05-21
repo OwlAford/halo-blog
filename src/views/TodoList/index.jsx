@@ -1,22 +1,22 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
 
-import Todo from "./Todo";
+import Todo from './Todo';
 
 @inject(stores => {
   const {
-    todos: { todos, unfinishedTodoCount }
+    todos: { todos, unfinishedTodoCount },
   } = stores;
   return {
     myTodos: todos,
     unTodos: unfinishedTodoCount,
-    addTodo: title => stores.todos.addTodo(title)
+    addTodo: title => stores.todos.addTodo(title),
   };
 })
 @observer
 class TodoList extends React.Component {
-  @observable newTodoTitle = "";
+  @observable newTodoTitle = '';
 
   render() {
     return (
@@ -49,7 +49,7 @@ class TodoList extends React.Component {
   @action
   handleFormSubmit = e => {
     this.props.addTodo(this.newTodoTitle);
-    this.newTodoTitle = "";
+    this.newTodoTitle = '';
     e.preventDefault();
   };
 }

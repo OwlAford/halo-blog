@@ -1,29 +1,29 @@
-import React from "react";
-import IScroll from "iscroll";
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import Avatar from "./Avatar";
-import { withToast } from "^/Toast";
-import BubblyButton from "^/BubblyButton";
+import React from 'react';
+import IScroll from 'iscroll';
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import Avatar from './Avatar';
+import { withToast } from '^/Toast';
+import BubblyButton from '^/BubblyButton';
 
 @withToast
 @inject(stores => {
   const {
-    chat: { chatName, chatAvatar, needReg, onlinelist }
+    chat: { chatName, chatAvatar, needReg, onlinelist },
   } = stores;
   return {
     chatName,
     chatAvatar,
     needReg,
     onlinelist,
-    onlineHandle: (name, avatar) => stores.chat.onlineHandle(name, avatar)
+    onlineHandle: (name, avatar) => stores.chat.onlineHandle(name, avatar),
   };
 })
 @observer
 class Online extends React.Component {
-  @observable nickName = "";
-  @observable avatarType = "";
+  @observable nickName = '';
+  @observable avatarType = '';
 
   constructor(props) {
     super(props);
@@ -33,9 +33,9 @@ class Online extends React.Component {
   componentDidMount() {
     const params = {
       disableTouch: true,
-      scrollbars: "custom",
+      scrollbars: 'custom',
       mouseWheel: false,
-      fadeScrollbars: true
+      fadeScrollbars: true,
     };
     this.onlineScroll = new IScroll(this.refs.$onlineList, params);
   }
@@ -59,13 +59,13 @@ class Online extends React.Component {
     if (reg.test(this.nickName)) {
       if (this.avatarType) {
         this.props.onlineHandle(this.nickName, this.avatarType);
-        this.props.showMessage("提交成功！", 2000, "success");
+        this.props.showMessage('提交成功！', 2000, 'success');
       } else {
-        this.props.showMessage("请选择头像！", 2000);
+        this.props.showMessage('请选择头像！', 2000);
       }
     } else {
-      this.refs.$name.value = this.nickName = "";
-      this.props.showMessage("请输入正确用户名！", 3000);
+      this.refs.$name.value = this.nickName = '';
+      this.props.showMessage('请输入正确用户名！', 3000);
     }
   }
 
@@ -79,8 +79,8 @@ class Online extends React.Component {
     return (
       <div className="chat-sidebar">
         <div
-          className={classNames("step", {
-            show: needReg
+          className={classNames('step', {
+            show: needReg,
           })}
         >
           <div className="user-name">
@@ -104,12 +104,12 @@ class Online extends React.Component {
           </BubblyButton>
         </div>
         <div
-          className={classNames("step", {
-            show: !needReg
+          className={classNames('step', {
+            show: !needReg,
           })}
         >
           <div className="login-info">
-            <i alt={chatAvatar} className={"round-avatar " + chatAvatar} />
+            <i alt={chatAvatar} className={'round-avatar ' + chatAvatar} />
             <div className="nick-name">{chatName}</div>
           </div>
           <div className="online-list" ref="$onlineList">

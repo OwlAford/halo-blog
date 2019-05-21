@@ -1,15 +1,15 @@
-import React from "react";
-import classNames from "classnames";
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
-import LazyDisplay from "^/LazyDisplay";
-import RootPortal from "^/RootPortal";
-import RobotGirl from "^/RobotGirl";
-import "./scss/index.scss";
+import React from 'react';
+import classNames from 'classnames';
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import LazyDisplay from '^/LazyDisplay';
+import RootPortal from '^/RootPortal';
+import RobotGirl from '^/RobotGirl';
+import './scss/index.scss';
 
 @inject(stores => {
   const {
-    home: { is2rdScreen, readMode, isNearBottom, girlShow, girlSing }
+    home: { is2rdScreen, readMode, isNearBottom, girlShow, girlSing },
   } = stores;
   return {
     is2rdScreen,
@@ -18,7 +18,7 @@ import "./scss/index.scss";
     girlShow,
     girlSing,
     girlVisibleHandle: state => stores.home.girlVisibleHandle(state),
-    girlSingHandle: state => stores.home.girlSingHandle(state)
+    girlSingHandle: state => stores.home.girlSingHandle(state),
   };
 })
 @observer
@@ -67,7 +67,7 @@ class Toolbar extends React.Component {
 
   componentDidMount() {
     document.addEventListener(
-      "click",
+      'click',
       () => {
         this.showMenu = false;
       },
@@ -77,20 +77,20 @@ class Toolbar extends React.Component {
 
   render() {
     const showStyle = {
-      animation: "fadeInUp .6s"
+      animation: 'fadeInUp .6s',
     };
 
     const hideStyle = {
-      animation: "fadeOutDown .6s .3s forwards"
+      animation: 'fadeOutDown .6s .3s forwards',
     };
 
     return [
       <div
         key="toolbar"
         className={classNames({
-          "app-toolbar": true,
-          "app-skew-shadow": true,
-          show: this.props.is2rdScreen || this.props.readMode
+          'app-toolbar': true,
+          'app-skew-shadow': true,
+          show: this.props.is2rdScreen || this.props.readMode,
         })}
       >
         <div
@@ -129,8 +129,8 @@ class Toolbar extends React.Component {
           <div
             className="fix-menu"
             style={{
-              left: this.menuX + "px",
-              top: this.menuY + "px"
+              left: this.menuX + 'px',
+              top: this.menuY + 'px',
             }}
           >
             <div
@@ -175,7 +175,7 @@ class Toolbar extends React.Component {
             </div>
           </div>
         </RootPortal>
-      )
+      ),
     ];
   }
 }

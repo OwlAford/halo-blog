@@ -1,22 +1,22 @@
-import React from "react";
-import { computed } from "mobx";
-import NProgress from "nprogress";
-import { observer, inject } from "mobx-react";
-import { intNum } from "~/libs/tools";
-import Spin from "^/Spin";
-import PicBox from "^/PicBox";
-import "./scss/index.scss";
+import React from 'react';
+import { computed } from 'mobx';
+import NProgress from 'nprogress';
+import { observer, inject } from 'mobx-react';
+import { intNum } from '~/libs/tools';
+import Spin from '^/Spin';
+import PicBox from '^/PicBox';
+import './scss/index.scss';
 
 @inject(stores => {
   const {
     wall: { favList },
-    home: { isAtBottom }
+    home: { isAtBottom },
   } = stores;
 
   return {
     isAtBottom,
     favList,
-    getFavList: cb => stores.wall.getFavList(cb)
+    getFavList: cb => stores.wall.getFavList(cb),
   };
 })
 @observer
@@ -56,9 +56,9 @@ class Wall extends React.Component {
               title="高清壁纸"
               notitle
               lnk={
-                "https://alpha.wallhaven.cc/wallpapers/thumb/small/th-" +
-                item.split(".")[0] +
-                ".jpg"
+                'https://alpha.wallhaven.cc/wallpapers/thumb/small/th-' +
+                item.split('.')[0] +
+                '.jpg'
               }
               clickEvent={e => {
                 this.goDetailPage(item);

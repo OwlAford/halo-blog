@@ -1,11 +1,11 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import "./scss/index.scss";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import './scss/index.scss';
 
 @observer
 class RobotGirl extends React.Component {
-  @observable lookState = "none";
+  @observable lookState = 'none';
   @observable pozLeft = window.innerWidth / 2;
   @observable pozTop = window.innerHeight / 2;
 
@@ -18,11 +18,11 @@ class RobotGirl extends React.Component {
       this.mouseMoveHandle(e);
       this.direction(e);
     };
-    window.addEventListener("mousemove", this.moveHandle, false);
+    window.addEventListener('mousemove', this.moveHandle, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousemove", this.moveHandle);
+    window.removeEventListener('mousemove', this.moveHandle);
   }
 
   mouseDownHandle(e) {
@@ -68,28 +68,28 @@ class RobotGirl extends React.Component {
     // console.log(angle)
 
     if (this.props.singing) {
-      this.lookState = "none";
+      this.lookState = 'none';
       return;
     }
 
     if (angle >= gap * 15 || angle < gap) {
-      this.lookState = "look-right";
+      this.lookState = 'look-right';
     } else if (angle >= gap && angle < gap * 3) {
-      this.lookState = "look-up-right";
+      this.lookState = 'look-up-right';
     } else if (angle >= gap * 3 && angle < gap * 5) {
-      this.lookState = "look-up";
+      this.lookState = 'look-up';
     } else if (angle >= gap * 5 && angle < gap * 7) {
-      this.lookState = "look-up-left";
+      this.lookState = 'look-up-left';
     } else if (angle >= gap * 7 && angle < gap * 9) {
-      this.lookState = "look-left";
+      this.lookState = 'look-left';
     } else if (angle >= gap * 9 && angle < gap * 11) {
-      this.lookState = "look-down-left";
+      this.lookState = 'look-down-left';
     } else if (angle >= gap * 11 && angle < gap * 13) {
-      this.lookState = "look-down";
+      this.lookState = 'look-down';
     } else if (angle >= gap * 13 && angle < gap * 15) {
-      this.lookState = "look-down-right";
+      this.lookState = 'look-down-right';
     } else {
-      this.lookState = "none";
+      this.lookState = 'none';
     }
   }
 
@@ -103,14 +103,14 @@ class RobotGirl extends React.Component {
     let customStyle = this.props.style || {};
 
     let reduce = {
-      transform: `scale(${this.props.zoom || 1})`
+      transform: `scale(${this.props.zoom || 1})`,
     };
 
     const poz = {
-      left: this.pozLeft + "px",
-      top: this.pozTop + "px",
+      left: this.pozLeft + 'px',
+      top: this.pozTop + 'px',
       ...reduce,
-      ...customStyle
+      ...customStyle,
     };
 
     return (
@@ -127,13 +127,13 @@ class RobotGirl extends React.Component {
           this.menuHandle(e);
         }}
       >
-        <div className={this.props.singing ? "me sing" : "me"}>
-          <div className={"hair " + this.lookState} />
+        <div className={this.props.singing ? 'me sing' : 'me'}>
+          <div className={'hair ' + this.lookState} />
           <div className="clothes">
             <div className="jumper" />
           </div>
-          <div className={"neck " + this.lookState} />
-          <div className={"head " + this.lookState}>
+          <div className={'neck ' + this.lookState} />
+          <div className={'head ' + this.lookState}>
             <div className="bangs" />
             <div className="mouse" />
           </div>

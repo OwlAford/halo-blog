@@ -1,10 +1,10 @@
-import { observable, action } from "mobx";
-import { JSON2Array } from "~/libs/tools";
-import { getData, online } from "~/constants/connect";
+import { observable, action } from 'mobx';
+import { JSON2Array } from '~/libs/tools';
+import { getData, online } from '~/constants/connect';
 
 export default class ChatModel {
-  @observable chatName = "";
-  @observable chatAvatar = "";
+  @observable chatName = '';
+  @observable chatAvatar = '';
   @observable needReg = true;
 
   @observable onlinelist = [];
@@ -38,7 +38,7 @@ export default class ChatModel {
 
   @action
   onlineAuto(cb) {
-    let info = localStorage.getItem("halo_user_chat_info");
+    let info = localStorage.getItem('halo_user_chat_info');
     if (info) {
       info = JSON.parse(info);
       this.chatName = info.nickName;
@@ -60,7 +60,7 @@ export default class ChatModel {
     }
     if (max >= pointer) {
       const curDate = chatDate[pointer];
-      getData("chatRoom/chatlist/" + curDate, val => {
+      getData('chatRoom/chatlist/' + curDate, val => {
         if (val) {
           if (document.hidden) {
             document.title = `【您有新消息】© HALO - 🍺及时行乐`;
@@ -84,10 +84,10 @@ export default class ChatModel {
   @action
   onlineHandle(name, avatar) {
     localStorage.setItem(
-      "halo_user_chat_info",
+      'halo_user_chat_info',
       JSON.stringify({
         nickName: name,
-        avatarType: avatar
+        avatarType: avatar,
       })
     );
     this.chatName = name;
@@ -99,13 +99,13 @@ export default class ChatModel {
 
   @action
   getChatDataHandle(cb) {
-    getData("chatRoom/online", val => {
+    getData('chatRoom/online', val => {
       val = val || {};
       this.onlinelist = JSON2Array(val).reverse();
       cb && cb(val);
     });
 
-    getData("chatRoom/chatdate", val => {
+    getData('chatRoom/chatdate', val => {
       if (val) {
         const dates = (this.chatdate = Object.keys(val).reverse());
         // 聊天天数发生变化
@@ -117,7 +117,7 @@ export default class ChatModel {
         this.dayLength = dates.length;
         const outdate =
           ~~(Date.now() / 24 / 60 / 60 / 1000) >
-          dates[0].replace("id_", "") * 1;
+          dates[0].replace('id_', '') * 1;
         if (outdate && this.firstTime) {
           this.pointer = -1;
           this.prevDate = dates[0];

@@ -1,16 +1,16 @@
-import React from "react";
-import classNames from "classnames";
-import "./scss/index.scss";
+import React from 'react';
+import classNames from 'classnames';
+import './scss/index.scss';
 
 export default ({ title, lnk, clickEvent, notitle }) => (
   <div
-    className={classNames("app-pic-box", "app-skew-shadow", {
-      notitle: notitle
+    className={classNames('app-pic-box', 'app-skew-shadow', {
+      notitle: notitle,
     })}
   >
     {!notitle && (
       <div className="title">
-        <div className="inner">{title || "佚名"}</div>
+        <div className="inner">{title || '佚名'}</div>
       </div>
     )}
     <div className="content">

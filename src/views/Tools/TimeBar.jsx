@@ -1,13 +1,13 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import classNames from "classnames";
-import ProgressBar from "^/ProgressBar";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import classNames from 'classnames';
+import ProgressBar from '^/ProgressBar';
 
 @observer
 class TimeBar extends React.Component {
-  @observable surplus = "";
-  @observable distType = "year";
+  @observable surplus = '';
+  @observable distType = 'year';
   @observable currentPercent = 100;
   @observable dayDistPercent = 100;
   @observable MonthDistPercent = 100;
@@ -22,11 +22,11 @@ class TimeBar extends React.Component {
   @action
   setPercent(type) {
     this.distType = type;
-    if (type === "year") {
+    if (type === 'year') {
       this.curdeg = 80;
       this.currentPercent = this.yearDistPercent;
       this.surplus = `今年还剩 ${this.yearDistDay} 天`;
-    } else if (type === "month") {
+    } else if (type === 'month') {
       this.curdeg = 60;
       this.currentPercent = this.MonthDistPercent;
       this.surplus = `本月还剩 ${this.MonthDistDay} 天`;
@@ -83,17 +83,17 @@ class TimeBar extends React.Component {
     this.MonthDistDay = MonthDistDay;
     this.MonthDistPercent = (MonthDistDay * 100) / fullMonthDay;
 
-    this.setPercent("year");
+    this.setPercent('year');
   }
 
   render() {
     const { cname, cip } = window.returnCitySN;
 
     const numGetColor = num =>
-      num > 30 ? (num > 60 ? "lime" : "yellow") : "red";
+      num > 30 ? (num > 60 ? 'lime' : 'yellow') : 'red';
 
     const barStyle = {
-      transform: `rotateX(${this.curdeg}deg) rotateY(0deg)`
+      transform: `rotateX(${this.curdeg}deg) rotateY(0deg)`,
     };
 
     return (
@@ -115,31 +115,31 @@ class TimeBar extends React.Component {
         </div>
         <div className="app-switch">
           <div
-            className={classNames("item-btn", {
-              active: this.distType === "hour"
+            className={classNames('item-btn', {
+              active: this.distType === 'hour',
             })}
             onClick={e => {
-              this.setPercent("hour");
+              this.setPercent('hour');
             }}
           >
             今日剩余
           </div>
           <div
-            className={classNames("item-btn", {
-              active: this.distType === "month"
+            className={classNames('item-btn', {
+              active: this.distType === 'month',
             })}
             onClick={e => {
-              this.setPercent("month");
+              this.setPercent('month');
             }}
           >
             本月剩余
           </div>
           <div
-            className={classNames("item-btn", {
-              active: this.distType === "year"
+            className={classNames('item-btn', {
+              active: this.distType === 'year',
             })}
             onClick={e => {
-              this.setPercent("year");
+              this.setPercent('year');
             }}
           >
             今年剩余

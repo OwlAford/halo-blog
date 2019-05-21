@@ -1,8 +1,8 @@
-import React from "react";
-import Spin from "^/Spin";
+import React from 'react';
+import Spin from '^/Spin';
 
 const Message = React.lazy(() =>
-  import(/* webpackChunkName: "message" */ "./Message")
+  import(/* webpackChunkName: "message" */ './Message')
 );
 
 export default () => (

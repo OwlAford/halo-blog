@@ -1,6 +1,6 @@
-import { observable, action } from "mobx";
-import axios from "axios";
-import shuffle from "lodash/shuffle";
+import { observable, action } from 'mobx';
+import axios from 'axios';
+import shuffle from 'lodash/shuffle';
 
 export default class ShootModel {
   @observable shootList = [];
@@ -8,7 +8,7 @@ export default class ShootModel {
   @action
   getShootList(cb, err) {
     axios
-      .get("/media/data/1x-latest.json")
+      .get('/media/data/1x-latest.json')
       .then(({ data }) => {
         this.shootList = shuffle(data.data || []);
         cb && cb(data.data);

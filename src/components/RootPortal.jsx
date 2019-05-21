@@ -1,9 +1,9 @@
-import React from "react";
-import { createPortal } from "react-dom";
+import React from 'react';
+import { createPortal } from 'react-dom';
 
 export default class RootPortal extends React.Component {
   componentWillMount() {
-    this.node = document.createElement("div");
+    this.node = document.createElement('div');
     document.body.appendChild(this.node);
   }
 

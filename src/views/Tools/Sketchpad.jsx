@@ -1,10 +1,10 @@
-import React from "react";
-import { observable, computed, action } from "mobx";
-import classNames from "classnames";
-import { observer } from "mobx-react";
-import { withToast } from "^/Toast";
-import { initImage, downloadCanvasImage } from "~/libs/tools";
-import "./scss/sketchpad.scss";
+import React from 'react';
+import { observable, computed, action } from 'mobx';
+import classNames from 'classnames';
+import { observer } from 'mobx-react';
+import { withToast } from '^/Toast';
+import { initImage, downloadCanvasImage } from '~/libs/tools';
+import './scss/sketchpad.scss';
 
 @withToast
 @observer
@@ -12,11 +12,11 @@ class Sketchpad extends React.Component {
   @observable bgColor = null;
   @observable beforeProgress = 9;
   @observable currentProgress = 9;
-  @observable lineColor = "#000";
+  @observable lineColor = '#000';
   @observable boxVisibility = false;
 
   imgPath =
-    "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
   stack = [];
   pointer = -1;
 
@@ -28,9 +28,9 @@ class Sketchpad extends React.Component {
   progressStartPos = 0;
 
   componentDidMount() {
-    this.ctx = this.$canvas.getContext("2d");
+    this.ctx = this.$canvas.getContext('2d');
     this.initStack();
-    window.addEventListener("mouseup", this.ProgressDragEnd, false);
+    window.addEventListener('mouseup', this.ProgressDragEnd, false);
   }
 
   stackSave() {
@@ -73,13 +73,13 @@ class Sketchpad extends React.Component {
 
   getFileUrl() {
     let url;
-    if (navigator.userAgent.indexOf("MSIE") >= 1) {
+    if (navigator.userAgent.indexOf('MSIE') >= 1) {
       // IE
       url = this.$path.value;
-    } else if (navigator.userAgent.indexOf("Firefox") > 0) {
+    } else if (navigator.userAgent.indexOf('Firefox') > 0) {
       // Firefox
       url = window.URL.createObjectURL(this.$path.files.item(0));
-    } else if (navigator.userAgent.indexOf("Chrome") > 0) {
+    } else if (navigator.userAgent.indexOf('Chrome') > 0) {
       // Chrome
       url = window.URL.createObjectURL(this.$path.files.item(0));
     }
@@ -142,14 +142,14 @@ class Sketchpad extends React.Component {
     if (reg.test(this.$path.value)) {
       this.getImageInfo(url);
     } else {
-      this.$path.value = "";
-      this.props.showMessage("文件格式错误！", 2000);
+      this.$path.value = '';
+      this.props.showMessage('文件格式错误！', 2000);
     }
   };
 
   getPos(event) {
     let x, y, ext;
-    ext = document.getElementById("musciBox").offsetHeight;
+    ext = document.getElementById('musciBox').offsetHeight;
     ext = ext || 72;
     x = event.pageX - event.target.offsetLeft;
     y = event.pageY - event.target.offsetTop - ext;
@@ -173,7 +173,7 @@ class Sketchpad extends React.Component {
     const ctx = this.ctx;
     const poz = this.getPos(e);
     ctx.lineTo(poz.x, poz.y);
-    ctx.lineCap = "round";
+    ctx.lineCap = 'round';
     ctx.stroke();
     e.preventDefault();
   };
@@ -204,7 +204,7 @@ class Sketchpad extends React.Component {
   };
 
   downloadDraw() {
-    downloadCanvasImage(this.$canvas, `painter-${Date.now()}.png`, "image/png");
+    downloadCanvasImage(this.$canvas, `painter-${Date.now()}.png`, 'image/png');
   }
 
   ProgressDragEnd = e => {
@@ -228,32 +228,32 @@ class Sketchpad extends React.Component {
 
   render() {
     const bgColor = [
-      "#fff",
-      "#eee",
-      "#ccc",
-      "#000",
-      "#00367C",
-      "#F48D00",
-      "#940034",
-      "#3CC6ED",
-      "#FDCE83",
-      "#FFBDC6"
+      '#fff',
+      '#eee',
+      '#ccc',
+      '#000',
+      '#00367C',
+      '#F48D00',
+      '#940034',
+      '#3CC6ED',
+      '#FDCE83',
+      '#FFBDC6',
     ];
 
     const brushColor = [
-      "#fff",
-      "#ccc",
-      "#000",
-      "#ff0000",
-      "#ffff00",
-      "#00ff00",
-      "#00ffff",
-      "#0000ff",
-      "#ff00ff",
-      "#009944",
-      "#00a0e9",
-      "#1d2088",
-      "#e4007f"
+      '#fff',
+      '#ccc',
+      '#000',
+      '#ff0000',
+      '#ffff00',
+      '#00ff00',
+      '#00ffff',
+      '#0000ff',
+      '#ff00ff',
+      '#009944',
+      '#00a0e9',
+      '#1d2088',
+      '#e4007f',
     ];
 
     return (
@@ -285,7 +285,7 @@ class Sketchpad extends React.Component {
                   style={{ backgroundColor: e }}
                   className={classNames({
                     bgDot: true,
-                    active: e === this.bgColor
+                    active: e === this.bgColor,
                   })}
                   onClick={ev => {
                     this.setBgColor(e);
@@ -307,8 +307,8 @@ class Sketchpad extends React.Component {
                 <span className="iconfont">&#xe8b4;</span>
                 <div
                   className={classNames({
-                    "size-box": true,
-                    show: this.boxVisibility
+                    'size-box': true,
+                    show: this.boxVisibility,
                   })}
                   onMouseMove={this.ProgressDraging}
                 >
@@ -329,7 +329,7 @@ class Sketchpad extends React.Component {
                   style={{ backgroundColor: e }}
                   className={classNames({
                     brushDot: true,
-                    active: e === this.lineColor
+                    active: e === this.lineColor,
                   })}
                   onClick={ev => {
                     this.setLineColor(e);
@@ -340,8 +340,8 @@ class Sketchpad extends React.Component {
           </div>
           <div
             className={classNames({
-              "board-wrap": true,
-              thin: this.lineWidthPixel < 5
+              'board-wrap': true,
+              thin: this.lineWidthPixel < 5,
             })}
           >
             <canvas

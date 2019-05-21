@@ -1,15 +1,15 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import LazyDisplay from "^/LazyDisplay";
-import Toast from "./Toast";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import LazyDisplay from '^/LazyDisplay';
+import Toast from './Toast';
 
 export default Component => {
   @observer
   class WithToastComponent extends React.Component {
     @observable showToast = false;
-    @observable toastType = "";
-    @observable toastMesg = "";
+    @observable toastType = '';
+    @observable toastMesg = '';
 
     constructor(props) {
       super(props);
@@ -20,7 +20,7 @@ export default Component => {
     showMessage(msg, delay, type) {
       this.showToast = true;
       this.toastMesg = msg;
-      this.toastType = type || "warning";
+      this.toastType = type || 'warning';
       clearTimeout(this.msgTimer);
       this.msgTimer = setTimeout(() => {
         this.showToast = false;
@@ -30,11 +30,11 @@ export default Component => {
 
     render() {
       const showStyle = {
-        animation: "fadeInUp .3s both"
+        animation: 'fadeInUp .3s both',
       };
 
       const hideStyle = {
-        animation: "fadeOutDown .3s both"
+        animation: 'fadeOutDown .3s both',
       };
 
       return [
@@ -55,7 +55,7 @@ export default Component => {
           >
             {this.toastMesg}
           </Toast>
-        </LazyDisplay>
+        </LazyDisplay>,
       ];
     }
   }

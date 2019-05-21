@@ -1,17 +1,17 @@
-import React from "react";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import "./scss/banner.scss";
-import throttle from "lodash/throttle";
-import debounce from "lodash/debounce";
-import * as StackBlur from "stackblur-canvas";
-import { initImage } from "~/libs/tools";
-import imageThumb from "./images/bg-city-thumb.jpg";
-import originImage from "./images/bg-city.jpg";
+import React from 'react';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import './scss/banner.scss';
+import throttle from 'lodash/throttle';
+import debounce from 'lodash/debounce';
+import * as StackBlur from 'stackblur-canvas';
+import { initImage } from '~/libs/tools';
+import imageThumb from './images/bg-city-thumb.jpg';
+import originImage from './images/bg-city.jpg';
 
 @inject(stores => {
   const {
-    home: { is2rdScreen, bannerDarkState }
+    home: { is2rdScreen, bannerDarkState },
   } = stores;
   return {
     is2rdScreen,
@@ -19,7 +19,7 @@ import originImage from "./images/bg-city.jpg";
     bannerDarkHandle: state => stores.home.bannerDarkHandle(state),
     isNearBottomHandle: state => stores.home.isNearBottomHandle(state),
     is2rdScreenHandle: state => stores.home.is2rdScreenHandle(state),
-    isAtBottomHandle: state => stores.home.isAtBottomHandle(state)
+    isAtBottomHandle: state => stores.home.isAtBottomHandle(state),
   };
 })
 @observer
@@ -36,7 +36,7 @@ class Banner extends React.Component {
 
   scrollPage() {
     const docEl = document.documentElement;
-    const $content = document.querySelector(".home-content");
+    const $content = document.querySelector('.home-content');
     const fullHeight = $content ? $content.offsetHeight : 0;
     const scrollTop = docEl.scrollTop || document.body.scrollTop;
     let percent = ~~((scrollTop / this.props.clientH) * 2 * 10000) / 10000;
@@ -67,15 +67,15 @@ class Banner extends React.Component {
     this.optInitBanner = debounce(e => {
       this.initBanner();
     }, 100);
-    window.addEventListener("scroll", this.optScroller, false);
-    window.addEventListener("resize", this.optInitBanner, false);
+    window.addEventListener('scroll', this.optScroller, false);
+    window.addEventListener('resize', this.optInitBanner, false);
   }
 
   genSize = wh => {
     const origin = wh;
     const view = [
       this.props.clientW * window.devicePixelRatio,
-      this.props.clientH * window.devicePixelRatio
+      this.props.clientH * window.devicePixelRatio,
     ];
     const originRatio = origin[0] / origin[1];
     const viewRatio = view[0] / view[1];
@@ -101,7 +101,7 @@ class Banner extends React.Component {
       view,
       viewRatio,
       clipPoz,
-      clipSize
+      clipSize,
     };
   };
 
@@ -110,7 +110,7 @@ class Banner extends React.Component {
     canvas.width = view[0];
     canvas.height = view[1];
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     ctx.drawImage(
       img,
 
@@ -137,7 +137,7 @@ class Banner extends React.Component {
       $originImage,
       $imageThumb,
       $originCanvas,
-      $thumbCanvas
+      $thumbCanvas,
     } = this.refs;
 
     const size = this.genSize([2048, 1365]);
@@ -169,7 +169,7 @@ class Banner extends React.Component {
       initImage($originImage).then(() => {
         const Style = $thumbCanvas.style;
         Style.opacity = 0;
-        Style.webkitTransition = Style.transition = "opacity 30ms linear";
+        Style.webkitTransition = Style.transition = 'opacity 30ms linear';
         this.drawCanvas($originImage, $originCanvas, size);
       });
     } else {
@@ -178,8 +178,8 @@ class Banner extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.optScroller);
-    window.removeEventListener("scroll", this.optInitBanner);
+    window.removeEventListener('scroll', this.optScroller);
+    window.removeEventListener('scroll', this.optInitBanner);
   }
 
   render() {
@@ -194,10 +194,10 @@ class Banner extends React.Component {
       <div
         key="home-mask"
         className={classNames({
-          "home-mask": true,
-          dark: !Props.is2rdScreen && Props.bannerDarkState
+          'home-mask': true,
+          dark: !Props.is2rdScreen && Props.bannerDarkState,
         })}
-      />
+      />,
     ];
   }
 }

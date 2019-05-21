@@ -1,14 +1,14 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import classNames from "classnames";
-import md5 from "md5";
-import QRCode from "qrcode";
-import { downloadCanvasImage } from "~/libs/tools";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import classNames from 'classnames';
+import md5 from 'md5';
+import QRCode from 'qrcode';
+import { downloadCanvasImage } from '~/libs/tools';
 
 @observer
 class QRDecode extends React.Component {
-  @observable QRCodeString = "";
+  @observable QRCodeString = '';
 
   @action
   genQRcode = e => {
@@ -16,7 +16,7 @@ class QRDecode extends React.Component {
     if (url) {
       QRCode.toCanvas(this.$qrcode, url, {
         width: 300,
-        margin: 1
+        margin: 1,
       }).then(() => {
         this.QRCodeString = url;
       });
@@ -28,7 +28,7 @@ class QRDecode extends React.Component {
       downloadCanvasImage(
         this.$qrcode,
         `qrcode-${md5(this.QRCodeString)}.png`,
-        "image/png"
+        'image/png'
       );
     }
   };
@@ -66,8 +66,8 @@ class QRDecode extends React.Component {
           </div>
           <button
             className={classNames({
-              "download-btn": true,
-              disabled: !this.QRCodeString
+              'download-btn': true,
+              disabled: !this.QRCodeString,
             })}
             ref={node => {
               this.$dwBtn = node;

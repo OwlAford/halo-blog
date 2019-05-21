@@ -1,21 +1,21 @@
-import React from "react";
-import { computed } from "mobx";
-import NProgress from "nprogress";
-import { observer, inject } from "mobx-react";
-import Spin from "^/Spin";
-import PicBox from "^/PicBox";
-import "./scss/index.scss";
+import React from 'react';
+import { computed } from 'mobx';
+import NProgress from 'nprogress';
+import { observer, inject } from 'mobx-react';
+import Spin from '^/Spin';
+import PicBox from '^/PicBox';
+import './scss/index.scss';
 
 @inject(stores => {
   const {
     shoot: { shootList },
-    home: { isAtBottom }
+    home: { isAtBottom },
   } = stores;
 
   return {
     isAtBottom,
     shootList,
-    getShootList: cb => stores.shoot.getShootList(cb)
+    getShootList: cb => stores.shoot.getShootList(cb),
   };
 })
 @observer
@@ -34,7 +34,7 @@ class Shoot extends React.Component {
   }
 
   goDetailPage(path, title) {
-    const id = path.split("/").reverse()[0];
+    const id = path.split('/').reverse()[0];
     window.open(`shoot.html?${id}&${encodeURI(title)}`);
   }
 

@@ -1,63 +1,63 @@
-import React from "react";
-import { observer, inject } from "mobx-react";
-import G2 from "@antv/g2";
+import React from 'react';
+import { observer, inject } from 'mobx-react';
+import G2 from '@antv/g2';
 
 @inject(stores => {
   const {
-    home: { weatherChart, ipCity, updateTime, weatherDetails }
+    home: { weatherChart, ipCity, updateTime, weatherDetails },
   } = stores;
 
   return {
     weatherChart,
     ipCity,
     updateTime,
-    weatherDetails
+    weatherDetails,
   };
 })
 @observer
 class Weather extends React.Component {
   componentDidMount() {
     const chart = new G2.Chart({
-      container: "c1",
+      container: 'c1',
       // forceFit: true,
       height: 340,
       width: 520,
-      padding: [30, 30, 40, 50]
+      padding: [30, 30, 40, 50],
     });
 
     chart.source(this.props.weatherChart, {
       month: {
-        range: [0, 1]
-      }
+        range: [0, 1],
+      },
     });
 
     chart.tooltip({
       crosshairs: {
-        type: "line"
-      }
+        type: 'line',
+      },
     });
 
-    chart.axis("temperature", {
+    chart.axis('temperature', {
       label: {
         formatter(val) {
-          return val + "°C";
-        }
-      }
+          return val + '°C';
+        },
+      },
     });
 
     chart
       .line()
-      .position("week*temperature")
-      .color("type");
+      .position('week*temperature')
+      .color('type');
     chart
       .point()
-      .position("week*temperature")
-      .color("type")
+      .position('week*temperature')
+      .color('type')
       .size(4)
-      .shape("circle")
+      .shape('circle')
       .style({
-        stroke: "#fff",
-        lineWidth: 1
+        stroke: '#fff',
+        lineWidth: 1,
       });
 
     chart.render();

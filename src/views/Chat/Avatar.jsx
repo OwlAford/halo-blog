@@ -1,26 +1,26 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import classNames from "classnames";
-import "./scss/avatar.scss";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import classNames from 'classnames';
+import './scss/avatar.scss';
 
 @observer
 class Avatar extends React.Component {
-  @observable current = "";
+  @observable current = '';
 
   avatarList = [
-    "woman",
-    "man",
-    "dog",
-    "bear",
-    "owl",
-    "rabbit",
-    "fox",
-    "cat",
-    "tree",
-    "raccoon",
-    "shark",
-    "elk"
+    'woman',
+    'man',
+    'dog',
+    'bear',
+    'owl',
+    'rabbit',
+    'fox',
+    'cat',
+    'tree',
+    'raccoon',
+    'shark',
+    'elk',
   ];
 
   @action
@@ -36,14 +36,14 @@ class Avatar extends React.Component {
         {this.avatarList.map((item, i) => (
           <div
             key={i}
-            className={classNames("avatar-wrap", {
-              active: this.current === item
+            className={classNames('avatar-wrap', {
+              active: this.current === item,
             })}
           >
             <i
               alt={item}
-              className={classNames("round-avatar", item, {
-                active: this.current === item
+              className={classNames('round-avatar', item, {
+                active: this.current === item,
               })}
               onClick={e => {
                 this.clickHandle(item);

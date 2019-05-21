@@ -1,15 +1,15 @@
-import React from "react";
-import { Base64 } from "js-base64";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
+import React from 'react';
+import { Base64 } from 'js-base64';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
 
 @observer
 class BaseEncode extends React.Component {
-  @observable base64Encode = "";
+  @observable base64Encode = '';
 
   @action
   cleanBaseInputHandle = e => {
-    this.$base64Ipt.value = this.base64Encode = "";
+    this.$base64Ipt.value = this.base64Encode = '';
   };
 
   @action

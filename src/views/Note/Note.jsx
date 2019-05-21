@@ -1,22 +1,22 @@
-import React from "react";
-import { computed } from "mobx";
-import NProgress from "nprogress";
-import { observer, inject } from "mobx-react";
-import { timeAgo, limitString } from "~/filters";
-import Spin from "^/Spin";
-import book from "./images/book.svg";
-import "./scss/index.scss";
+import React from 'react';
+import { computed } from 'mobx';
+import NProgress from 'nprogress';
+import { observer, inject } from 'mobx-react';
+import { timeAgo, limitString } from '~/filters';
+import Spin from '^/Spin';
+import book from './images/book.svg';
+import './scss/index.scss';
 
 @inject(stores => {
   const {
     article: { list },
-    home: { isAtBottom }
+    home: { isAtBottom },
   } = stores;
 
   return {
     isAtBottom,
     list,
-    getArticleList: cb => stores.article.getList(cb)
+    getArticleList: cb => stores.article.getList(cb),
   };
 })
 @observer
@@ -30,7 +30,7 @@ class Note extends React.Component {
   }
 
   goDetailPage(id) {
-    window.open("article.html?" + id);
+    window.open('article.html?' + id);
   }
 
   componentWillMount() {

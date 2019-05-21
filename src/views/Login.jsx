@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react';
 // import { withRouter } from 'react-router-dom'
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
-import logo from "#/images/logo.png";
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import logo from '#/images/logo.png';
 
 @inject(stores => {
   const {
-    login: { checkCodeSrc }
+    login: { checkCodeSrc },
   } = stores;
   return {
     vcodeSrc: checkCodeSrc,
     getSession: title => stores.login.getSession(),
     loginHandle: (name, pswd, code) =>
-      stores.login.validateLogin(name, pswd, code)
+      stores.login.validateLogin(name, pswd, code),
   };
 })
 @observer
 // @withRouter
 class LoginView extends React.Component {
-  @observable userName = "admin";
-  @observable pswd = "123456";
-  @observable vcode = "";
+  @observable userName = 'admin';
+  @observable pswd = '123456';
+  @observable vcode = '';
 
   reloadCode() {
     this.props.getSession();
@@ -47,11 +47,11 @@ class LoginView extends React.Component {
 
   handleSubmit() {
     if (!this.userName) {
-      alert("请输入用户名！");
+      alert('请输入用户名！');
     } else if (!this.pswd) {
-      alert("请输入登录密码！");
+      alert('请输入登录密码！');
     } else if (!this.vcode) {
-      alert("请输入验证码！");
+      alert('请输入验证码！');
     } else {
       this.props.loginHandle(this.userName, this.pswd, this.vcode);
     }
@@ -86,7 +86,7 @@ class LoginView extends React.Component {
           onChange={this.handleCodeChange}
         />
         <div
-          style={{ width: "86px", height: "28px", backgroundColor: "#ccc" }}
+          style={{ width: '86px', height: '28px', backgroundColor: '#ccc' }}
           onClick={e => this.reloadCode()}
         >
           <img src={this.props.vcodeSrc} />

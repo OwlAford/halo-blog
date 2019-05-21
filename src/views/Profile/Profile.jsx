@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import Terminal from "./Terminal";
-import "./scss/index.scss";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Terminal from './Terminal';
+import './scss/index.scss';
 
 const Profile = () => (
   <div className="home-profile gitfont">

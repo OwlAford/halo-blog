@@ -1,35 +1,35 @@
-import React from "react";
-import { observable, action } from "mobx";
-import NProgress from "nprogress";
-import IScroll from "iscroll";
-import { observer, inject } from "mobx-react";
-import { formatNumner } from "~/filters";
-import { withToast } from "^/Toast";
-import EmptyBox from "^/EmptyBox";
+import React from 'react';
+import { observable, action } from 'mobx';
+import NProgress from 'nprogress';
+import IScroll from 'iscroll';
+import { observer, inject } from 'mobx-react';
+import { formatNumner } from '~/filters';
+import { withToast } from '^/Toast';
+import EmptyBox from '^/EmptyBox';
 
 @inject(stores => {
   const {
-    home: { starredDataList, starredGotten }
+    home: { starredDataList, starredGotten },
   } = stores;
 
   return {
     starredGotten,
     starredDataList,
-    getStarredDataList: cb => stores.home.getStarredDataList(cb)
+    getStarredDataList: cb => stores.home.getStarredDataList(cb),
   };
 })
 @observer
 @withToast
 class RepoStar extends React.Component {
-  @observable repoData = "";
+  @observable repoData = '';
 
   @action
   componentDidMount() {
     this.scroll = new IScroll(this.refs.$repoList, {
       disableTouch: true,
-      scrollbars: "custom",
+      scrollbars: 'custom',
       mouseWheel: true,
-      fadeScrollbars: true
+      fadeScrollbars: true,
     });
     if (this.props.starredGotten) {
       return;
@@ -39,7 +39,7 @@ class RepoStar extends React.Component {
       data => {
         NProgress.done();
       },
-      () => this.props.showMessage("数据获取失败！", 2000)
+      () => this.props.showMessage('数据获取失败！', 2000)
     );
   }
 

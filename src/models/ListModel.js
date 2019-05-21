@@ -1,6 +1,6 @@
-import { observable, action } from "mobx";
-import { getData2Array } from "~/constants/connect";
-import shuffle from "lodash/shuffle";
+import { observable, action } from 'mobx';
+import { getData2Array } from '~/constants/connect';
+import shuffle from 'lodash/shuffle';
 
 export default class ListModel {
   @observable list = [];

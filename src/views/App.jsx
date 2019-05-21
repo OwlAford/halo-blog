@@ -1,8 +1,8 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./Home";
-import Efforts from "./Efforts";
-import "#/styles";
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Home from './Home';
+import Efforts from './Efforts';
+import '#/styles';
 
 const App = () => (
   <div className="app-core">

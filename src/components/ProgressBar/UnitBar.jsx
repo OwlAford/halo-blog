@@ -1,22 +1,22 @@
-import React from "react";
-import "./scss/index.scss";
+import React from 'react';
+import './scss/index.scss';
 
 export default ({ color, progress, percent, clickEvent, style }) => {
   style = style || {};
 
   const params = {
     style: {
-      width: `${progress}%`
-    }
+      width: `${progress}%`,
+    },
   };
 
   const barStyle = {
     width: `${percent || 100}%`,
-    ...style
+    ...style,
   };
   return (
     <div
-      className={"bar " + color}
+      className={'bar ' + color}
       style={barStyle}
       onClick={e => {
         clickEvent && clickEvent();

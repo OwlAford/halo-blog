@@ -1,6 +1,6 @@
-import React from "react";
-import "./scss/payload.scss";
-import wilde from "./images/wilde.jpg";
+import React from 'react';
+import './scss/payload.scss';
+import wilde from './images/wilde.jpg';
 
 const Payload = ({ option }) => {
   const Poetry = () => [
@@ -24,14 +24,14 @@ const Payload = ({ option }) => {
     </div>,
     <div className="pic" key="pic">
       <img src={wilde} alt="Oscar Wilde" width="100%" />
-    </div>
+    </div>,
   ];
   return (
     <div className="terminal-payload">
       <Poetry />
-      {option === "2" && <div className="singer" />}
-      {option === "3" && <div className="cooking" />}
-      {option === "4" && <div className="popcorn" />}
+      {option === '2' && <div className="singer" />}
+      {option === '3' && <div className="cooking" />}
+      {option === '4' && <div className="popcorn" />}
     </div>
   );
 };

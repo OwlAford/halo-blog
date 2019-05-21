@@ -12,8 +12,8 @@
     "unit": "nail-cli unit",
     "e2e": "nail-cli e2e",
     "e2e:o": "nail-cli e2e -o",
-    "lint": "eslint --ext .js,.jsx src/",
-    "lint:fix": "eslint --fix --ext .js,.jsx src/"
+    "lint": "eslint '**/*.js?(x)'",
+    "lint:fix": "eslint --fix '**/*.js?(x)'"
   },
   "author": "OwlAford",
   "license": "MIT",
@@ -26,13 +26,13 @@
     "classnames": "^2.2.6",
     "dynamics.js": "^1.1.5",
     "gitalk": "1.5.0",
-    "gsap": "^2.1.2",
+    "gsap": "^2.1.3",
     "iscroll": "^5.2.0",
     "js-base64": "2.5.1",
     "lodash": "^4.17.11",
     "md5": "^2.2.1",
     "mobx": "5.9.4",
-    "mobx-react": "^5.4.3",
+    "mobx-react": "^5.4.4",
     "mobx-react-devtools": "^6.1.1",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
@@ -49,7 +49,7 @@
     "wavesurfer.js": "^2.2.1"
   },
   "devDependencies": {
-    "@nail-cli/core": "^1.6.6",
-    "cypress": "3.2.0"
+    "@nail-cli/core": "^1.7.3",
+    "cypress": "3.3.0"
   }
 }

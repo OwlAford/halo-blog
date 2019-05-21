@@ -1,5 +1,5 @@
-import { TweenLite, EasePack } from "gsap";
-import { Circ } from "gsap/EasePack";
+import { TweenLite, EasePack } from 'gsap';
+import { Circ } from 'gsap/EasePack';
 
 let width;
 let height;
@@ -15,13 +15,13 @@ const initHeader = (canvas, w, h) => {
   height = h || (clientHeight > 560 ? clientHeight : 560);
   target = {
     x: width / 2,
-    y: height / 2
+    y: height / 2,
   };
 
   if (canvas) {
     canvas.width = width;
     canvas.height = height;
-    ctx = canvas.getContext("2d");
+    ctx = canvas.getContext('2d');
   }
 
   // create points
@@ -34,7 +34,7 @@ const initHeader = (canvas, w, h) => {
         x: px,
         originX: px,
         y: py,
-        originY: py
+        originY: py,
       });
     }
   }
@@ -74,7 +74,7 @@ const initHeader = (canvas, w, h) => {
     let c = new Circle(
       points[i],
       2 + Math.random() * 2,
-      "rgba(255,255,255,0.3)"
+      'rgba(255,255,255,0.3)'
     );
     points[i].circle = c;
   }
@@ -82,8 +82,8 @@ const initHeader = (canvas, w, h) => {
 
 // Event handling
 const addListeners = () => {
-  window.addEventListener("mousemove", mouseMove, false);
-  window.addEventListener("scroll", scrollCheck, false);
+  window.addEventListener('mousemove', mouseMove, false);
+  window.addEventListener('scroll', scrollCheck, false);
 };
 
 const mouseMove = e => {
@@ -149,7 +149,7 @@ const shiftPoint = p => {
     ease: Circ.easeInOut,
     onComplete() {
       shiftPoint(p);
-    }
+    },
   });
 };
 

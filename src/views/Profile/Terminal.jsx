@@ -1,18 +1,18 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import dynamics from "dynamics.js";
-import { waiter } from "~/libs/tools";
-import Payload from "./Payload";
-import "./scss/terminal.scss";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import dynamics from 'dynamics.js';
+import { waiter } from '~/libs/tools';
+import Payload from './Payload';
+import './scss/terminal.scss';
 
 @inject(stores => {
   const {
-    home: { hobby }
+    home: { hobby },
   } = stores;
   return {
-    hobby
+    hobby,
   };
 })
 @observer
@@ -41,13 +41,13 @@ class Terminal extends React.Component {
   @action
   keyupHandle(e) {
     const hobbyData = this.props.hobby;
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       if (this.step === 0) {
         this.step = 1;
       } else if (this.step === 1 && this.menuSelected) {
         let cur = hobbyData.details[this.menuSelected - 1];
         if (cur) {
-          this.menuSelected === "1" && this.triggerBall(this.menuSelected);
+          this.menuSelected === '1' && this.triggerBall(this.menuSelected);
           this.applySelected = this.menuSelected;
           this.currentScreen = cur;
           this.step = 2;
@@ -69,10 +69,10 @@ class Terminal extends React.Component {
         }
         this.menuSelected = null;
       }
-      this.$textArea.value = "";
+      this.$textArea.value = '';
     } else if (
       (this.isNumString(e.key) ||
-        e.key === "Backspace" ||
+        e.key === 'Backspace' ||
         this.isLetter(e.key)) &&
       this.step === 1
     ) {
@@ -83,20 +83,20 @@ class Terminal extends React.Component {
   async triggerBall() {
     const { $effect } = this;
     const clientWidth = document.documentElement.clientWidth;
-    const $ball = document.createElement("div");
-    $ball.className = "soccer";
+    const $ball = document.createElement('div');
+    $ball.className = 'soccer';
     $effect.appendChild($ball);
 
     dynamics.animate(
       $ball,
       {
-        translateY: 519
+        translateY: 519,
       },
       {
         type: dynamics.gravity,
         duration: 3000,
         bounciness: 950,
-        elasticity: 700
+        elasticity: 700,
       }
     );
     $ball.style.left = `${clientWidth + 160}px`;
@@ -134,7 +134,7 @@ class Terminal extends React.Component {
       <p key="iptNum">
         {inputNum()}
         {cursor()}
-      </p>
+      </p>,
     ];
 
     const prev = () => (
@@ -155,7 +155,7 @@ class Terminal extends React.Component {
               </p>
             );
           }),
-          inputNext()
+          inputNext(),
         ];
       } else if (this.step === 2) {
         return [
@@ -165,7 +165,7 @@ class Terminal extends React.Component {
           this.currentScreen.map((item, i) => {
             return <p key={i}>{item}</p>;
           }),
-          prev()
+          prev(),
         ];
       } else {
         return null;
@@ -205,7 +205,7 @@ class Terminal extends React.Component {
           this.$effect = node;
         }}
       />,
-      <Payload key="payload" option={this.applySelected} />
+      <Payload key="payload" option={this.applySelected} />,
     ];
   }
 }

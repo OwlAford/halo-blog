@@ -1,8 +1,8 @@
-import React from "react";
-import Spin from "^/Spin";
+import React from 'react';
+import Spin from '^/Spin';
 
 const Design = React.lazy(() =>
-  import(/* webpackChunkName: "design" */ "./Design")
+  import(/* webpackChunkName: "design" */ './Design')
 );
 
 export default () => (

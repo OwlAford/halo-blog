@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Logo from "~/layouts/Logo";
-import "./scss/index.scss";
-import QRcode from "./images/code.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '~/layouts/Logo';
+import './scss/index.scss';
+import QRcode from './images/code.png';
 
 export default () => (
   <div className="home-efforts">
@@ -10,8 +10,8 @@ export default () => (
       size={48}
       run
       style={{
-        left: "30px",
-        top: "30px"
+        left: '30px',
+        top: '30px',
       }}
     />
     <div className="app-brand halofont">Halo</div>

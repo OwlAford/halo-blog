@@ -1,19 +1,19 @@
-import React from "react";
-import IScroll from "iscroll";
-import { observer, inject } from "mobx-react";
-import classNames from "classnames";
-import { formatDate } from "~/filters";
-import { withToast } from "^/Toast";
+import React from 'react';
+import IScroll from 'iscroll';
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames';
+import { formatDate } from '~/filters';
+import { withToast } from '^/Toast';
 
 @withToast
 @inject(stores => {
   const {
-    chat: { prevDate, curChatList }
+    chat: { prevDate, curChatList },
   } = stores;
   return {
     curChatList,
     prevDate,
-    triggerPrevHandle: () => stores.chat.triggerPrevHandle()
+    triggerPrevHandle: () => stores.chat.triggerPrevHandle(),
   };
 })
 @observer
@@ -25,17 +25,17 @@ class ChatList extends React.Component {
     const params = {
       disableTouch: true,
       disablePointer: true,
-      scrollbars: "custom",
-      shrinkScrollbars: "scale",
+      scrollbars: 'custom',
+      shrinkScrollbars: 'scale',
       mouseWheel: true,
-      fadeScrollbars: false
+      fadeScrollbars: false,
     };
     this.chatScroll = new IScroll(this.refs.$chatList, params);
     setTimeout(() => {
       this.chatScroll.refresh();
       this.chatScroll.scrollTo(0, this.chatScroll.maxScrollY, 300);
     }, 300);
-    this.chatScroll.on("scrollEnd", () => {
+    this.chatScroll.on('scrollEnd', () => {
       if (Math.abs(this.chatScroll.maxScrollY - this.chatScroll.y) < 100) {
         this.couldAutoScroll = true;
       } else {
@@ -63,7 +63,7 @@ class ChatList extends React.Component {
   }
 
   formatIdDate(id) {
-    return formatDate(id.replace("id_", "") * 24 * 60 * 60 * 1000)
+    return formatDate(id.replace('id_', '') * 24 * 60 * 60 * 1000)
       .ChineseFullDate;
   }
 
@@ -95,13 +95,13 @@ class ChatList extends React.Component {
                   return (
                     <div
                       key={j}
-                      className={classNames("chat-list-item", {
-                        "dir-right": window.returnCitySN.cip === sub.ip
+                      className={classNames('chat-list-item', {
+                        'dir-right': window.returnCitySN.cip === sub.ip,
                       })}
                     >
                       <i
                         alt={sub.avatar}
-                        className={"round-avatar " + sub.avatar}
+                        className={'round-avatar ' + sub.avatar}
                       >
                         <div className="send-time">
                           {formatDate(sub.time).clock}

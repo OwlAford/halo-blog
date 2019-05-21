@@ -1,15 +1,15 @@
-import React from "react";
-import { observable, action } from "mobx";
-import { observer } from "mobx-react";
-import md5 from "md5";
+import React from 'react';
+import { observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+import md5 from 'md5';
 
 @observer
 class MD5 extends React.Component {
-  @observable md5Encode = "";
+  @observable md5Encode = '';
 
   @action
   cleanInputHandle = e => {
-    this.$md5Ipt.value = this.md5Encode = "";
+    this.$md5Ipt.value = this.md5Encode = '';
   };
 
   @action
@@ -48,7 +48,7 @@ class MD5 extends React.Component {
             <textarea
               name="ecodeString"
               readOnly
-              value={this.md5Encode ? md5(this.md5Encode) : ""}
+              value={this.md5Encode ? md5(this.md5Encode) : ''}
             />
           </div>
         </div>

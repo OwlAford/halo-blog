@@ -1,8 +1,8 @@
-import React from "react";
-import Spin from "^/Spin";
+import React from 'react';
+import Spin from '^/Spin';
 
 const Profile = React.lazy(() =>
-  import(/* webpackChunkName: "profile" */ "./Profile")
+  import(/* webpackChunkName: "profile" */ './Profile')
 );
 
 export default () => (
