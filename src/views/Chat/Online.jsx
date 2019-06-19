@@ -37,7 +37,7 @@ class Online extends React.Component {
       mouseWheel: false,
       fadeScrollbars: true,
     };
-    this.onlineScroll = new IScroll(this.refs.$onlineList, params);
+    this.onlineScroll = new IScroll(this.$onlineList, params);
   }
 
   componentDidUpdate() {
@@ -64,7 +64,7 @@ class Online extends React.Component {
         this.props.showMessage('请选择头像！', 2000);
       }
     } else {
-      this.refs.$name.value = this.nickName = '';
+      this.$name.value = this.nickName = '';
       this.props.showMessage('请输入正确用户名！', 3000);
     }
   }
@@ -86,7 +86,9 @@ class Online extends React.Component {
           <div className="user-name">
             <div className="name-ipt">
               <input
-                ref="$name"
+                ref={node => {
+                  this.$name = node;
+                }}
                 type="text"
                 placeholder="请输入昵称"
                 onChange={this.nickNameHandle}
@@ -112,7 +114,12 @@ class Online extends React.Component {
             <i alt={chatAvatar} className={'round-avatar ' + chatAvatar} />
             <div className="nick-name">{chatName}</div>
           </div>
-          <div className="online-list" ref="$onlineList">
+          <div
+            className="online-list"
+            ref={node => {
+              this.$onlineList = node;
+            }}
+          >
             <div className="order-list">
               {onlinelist.map(
                 ({ avatar, name, os, browser, cip, cname }, i) => {

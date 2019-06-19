@@ -30,7 +30,7 @@ class ChatList extends React.Component {
       mouseWheel: true,
       fadeScrollbars: false,
     };
-    this.chatScroll = new IScroll(this.refs.$chatList, params);
+    this.chatScroll = new IScroll(this.$chatList, params);
     setTimeout(() => {
       this.chatScroll.refresh();
       this.chatScroll.scrollTo(0, this.chatScroll.maxScrollY, 300);
@@ -71,7 +71,12 @@ class ChatList extends React.Component {
     const { curChatList, prevDate } = this.props;
 
     return (
-      <div className="chating-cxt" ref="$chatList">
+      <div
+        className="chating-cxt"
+        ref={node => {
+          this.$chatList = node;
+        }}
+      >
         <div className="chat-list">
           {prevDate && (
             <div className="before-view">

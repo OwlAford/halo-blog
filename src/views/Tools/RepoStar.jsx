@@ -25,7 +25,7 @@ class RepoStar extends React.Component {
 
   @action
   componentDidMount() {
-    this.scroll = new IScroll(this.refs.$repoList, {
+    this.scroll = new IScroll(this.$repoList, {
       disableTouch: true,
       scrollbars: 'custom',
       mouseWheel: true,
@@ -62,7 +62,12 @@ class RepoStar extends React.Component {
             <span>开源项目推荐</span>
           </div>
         </div>
-        <div className="repo-list" ref="$repoList">
+        <div
+          className="repo-list"
+          ref={node => {
+            this.$repoList = node;
+          }}
+        >
           <div className="open-source-repo">
             {list.length === 0 ? (
               <EmptyBox>

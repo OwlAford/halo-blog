@@ -56,8 +56,8 @@ class Banner extends React.Component {
       ? this.props.isAtBottomHandle(false)
       : this.props.isAtBottomHandle(true);
 
-    if (this.refs.$thumbCanvas) {
-      this.refs.$thumbCanvas.style.opacity = percent;
+    if (this.$thumbCanvas) {
+      this.$thumbCanvas.style.opacity = percent;
     }
   }
 
@@ -132,25 +132,19 @@ class Banner extends React.Component {
   };
 
   initBanner(first) {
-    const {
-      $banner,
-      $originImage,
-      $imageThumb,
-      $originCanvas,
-      $thumbCanvas,
-    } = this.refs;
-
     const size = this.genSize([2048, 1365]);
     const thumbSize = this.genSize([320, 213]);
 
-    const fullCSS = `width: 100%; height: ${size.view[1] /
-      window.devicePixelRatio}px`;
-    $banner.style.cssText = fullCSS;
+    if (this.$banner) {
+      const fullCSS = `width: 100%; height: ${size.view[1] /
+        window.devicePixelRatio}px`;
+      this.$banner.style.cssText = fullCSS;
+    }
 
     const drawBlur = () => {
-      this.drawCanvas($imageThumb, $thumbCanvas, thumbSize);
+      this.drawCanvas(this.$imageThumb, this.$thumbCanvas, thumbSize);
       StackBlur.canvasRGB(
-        $thumbCanvas,
+        this.$thumbCanvas,
         0,
         0,
         thumbSize.view[0],
@@ -160,20 +154,22 @@ class Banner extends React.Component {
     };
 
     if (first) {
-      initImage($imageThumb).then(drawBlur);
+      initImage(this.$imageThumb).then(drawBlur);
     } else {
       drawBlur();
     }
 
     if (first) {
-      initImage($originImage).then(() => {
-        const Style = $thumbCanvas.style;
-        Style.opacity = 0;
-        Style.webkitTransition = Style.transition = 'opacity 30ms linear';
-        this.drawCanvas($originImage, $originCanvas, size);
+      initImage(this.$originImage).then(() => {
+        if (this.$thumbCanvas) {
+          const Style = this.$thumbCanvas.style;
+          Style.opacity = 0;
+          Style.webkitTransition = Style.transition = 'opacity 30ms linear';
+          this.drawCanvas(this.$originImage, this.$originCanvas, size);
+        }
       });
     } else {
-      this.drawCanvas($originImage, $originCanvas, size);
+      this.drawCanvas(this.$originImage, this.$originCanvas, size);
     }
   }
 
@@ -185,11 +181,39 @@ class Banner extends React.Component {
   render() {
     const Props = this.props;
     return [
-      <div key="banner" className="home-banner" ref="$banner">
-        <canvas className="originCanvas" ref="$originCanvas" />
-        <canvas className="thumbCanvas" ref="$thumbCanvas" />
-        <img className="imageThumb" src={imageThumb} ref="$imageThumb" />
-        <img className="originImage" src={originImage} ref="$originImage" />
+      <div
+        key="banner"
+        className="home-banner"
+        ref={node => {
+          this.$banner = node;
+        }}
+      >
+        <canvas
+          className="originCanvas"
+          ref={node => {
+            this.$originCanvas = node;
+          }}
+        />
+        <canvas
+          className="thumbCanvas"
+          ref={node => {
+            this.$thumbCanvas = node;
+          }}
+        />
+        <img
+          className="imageThumb"
+          src={imageThumb}
+          ref={node => {
+            this.$imageThumb = node;
+          }}
+        />
+        <img
+          className="originImage"
+          src={originImage}
+          ref={node => {
+            this.$originImage = node;
+          }}
+        />
       </div>,
       <div
         key="home-mask"

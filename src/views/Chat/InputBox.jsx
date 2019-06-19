@@ -252,7 +252,7 @@ class InputBox extends React.Component {
   appendEmoji(e) {
     this.chatingText += e.target.innerText;
     this.emojiShowHandle(null, false);
-    this.refs.$ipt.focus();
+    this.$ipt.focus();
   }
 
   sendMessage() {
@@ -293,7 +293,9 @@ class InputBox extends React.Component {
       <div className="chating-input">
         <div className="txtipt">
           <textarea
-            ref="$ipt"
+            ref={node => {
+              this.$ipt = node;
+            }}
             placeholder="请输入聊天内容，Ctrl + Enter 键发送"
             value={this.chatingText}
             onChange={e => {
