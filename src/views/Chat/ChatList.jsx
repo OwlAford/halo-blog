@@ -3,9 +3,9 @@ import IScroll from 'iscroll';
 import { observer, inject } from 'mobx-react';
 import classNames from 'classnames';
 import { formatDate } from '~/filters';
-import { withToast } from '^/Toast';
+// import { withToast } from '^/Toast';
 
-@withToast
+// @withToast
 @inject(stores => {
   const {
     chat: { prevDate, curChatList },

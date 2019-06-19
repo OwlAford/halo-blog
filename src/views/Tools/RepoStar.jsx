@@ -7,6 +7,7 @@ import { formatNumner } from '~/filters';
 import { withToast } from '^/Toast';
 import EmptyBox from '^/EmptyBox';
 
+@withToast
 @inject(stores => {
   const {
     home: { starredDataList, starredGotten },
@@ -19,7 +20,6 @@ import EmptyBox from '^/EmptyBox';
   };
 })
 @observer
-@withToast
 class RepoStar extends React.Component {
   @observable repoData = '';
 
@@ -39,7 +39,9 @@ class RepoStar extends React.Component {
       data => {
         NProgress.done();
       },
-      () => this.props.showMessage('数据获取失败！', 2000)
+      () => {
+        this.props.showMessage('数据获取失败！', 2000);
+      }
     );
   }
 
